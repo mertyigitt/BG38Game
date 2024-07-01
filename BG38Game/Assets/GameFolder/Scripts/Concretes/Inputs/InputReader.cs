@@ -8,7 +8,9 @@ namespace BG38Game.Inputs
     {
         public Vector3 Direction { get; set; }
         public Vector2 Rotation { get; set; }
-        public bool IsJump { get; private set; }
+        public bool IsJump { get; set; }
+        
+        public bool IsPush { get; set; }
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -24,6 +26,11 @@ namespace BG38Game.Inputs
         public void OnJump(InputAction.CallbackContext context)
         {
             IsJump = context.ReadValueAsButton();
+        }
+        
+        public void OnPush(InputAction.CallbackContext context)
+        {
+            IsPush = context.ReadValueAsButton();
         }
     }
 }

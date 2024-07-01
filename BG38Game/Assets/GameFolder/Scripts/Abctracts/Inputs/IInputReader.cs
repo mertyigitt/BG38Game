@@ -7,5 +7,6 @@ namespace BG38Game.Abstracts.Inputs
         Vector3 Direction { get; }
         Vector2 Rotation { get; }
         bool IsJump { get; }
+        bool IsPush { get; }
     }
 }

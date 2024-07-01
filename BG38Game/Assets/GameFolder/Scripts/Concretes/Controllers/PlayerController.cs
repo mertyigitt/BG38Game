@@ -2,6 +2,7 @@ using BG38Game.Abstracts.Controllers;
 using BG38Game.Abstracts.Inputs;
 using BG38Game.Abstracts.Movements;
 using BG38Game.Movements;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace BG38Game.Controllers
@@ -27,6 +28,7 @@ namespace BG38Game.Controllers
         private IRotator _xRotator;
         private IRotator _yRotator;
         private IJumper _jumper;
+        private IPusher _pusher;
         private Vector3 _direction;
         private Vector2 _rotation;
 
@@ -48,6 +50,7 @@ namespace BG38Game.Controllers
             _xRotator = new RotatorXCharacter(this);
             _yRotator = new RotatorYCharacter(this);
             _jumper = new JumpWithCharacterController(this);
+            _pusher = GetComponent<PushWithCharacterController>();
         }
 
         private void Update()
@@ -60,9 +63,19 @@ namespace BG38Game.Controllers
         private void FixedUpdate()
         {
             _mover.MoveAction(_direction , moveSpeed);
+            
             if (_input.IsJump)
             {
                 _jumper.JumpAction(jumpSpeed);
+            }
+
+            if (_input.IsPush)
+            {
+                _pusher.PushAction();
+            }
+            else
+            {
+                _pusher.IsPushing = false;
             }
         }
     }

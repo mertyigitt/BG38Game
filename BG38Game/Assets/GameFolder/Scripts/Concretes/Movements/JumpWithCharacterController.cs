@@ -19,7 +19,6 @@ namespace BG38Game.Movements
         }
         public void JumpAction(float jumpSpeed)
         {
-            Debug.Log(_gravity.IsGroundedValue);
             if(!_gravity.IsGroundedValue) return;
             if (_gravity.IsGroundedValue)
             {
