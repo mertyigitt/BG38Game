@@ -60,7 +60,7 @@ Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşların�
 
 - **Sprint Review:** Alınan kararlar: Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sahip olması kararlaştırılmıştır. Farklı harita ve levellerin olmasına ve bu levellerin mekaniklerine karar verilmiştir. Multiplayer modunun oluşturulması ve UI kitinin hazırlanması ise bir sonraki sprint'e ertelenmiştir. Ekstra eklenmesi gereken özellikler belirlenmiştir.
 - **Sprint Retrospective:**
-  - Peoje yönetim aracı değiştirilip Jira'dan HacknPlan'a geçilmiştir.
+  - Proje yönetim aracı değiştirilip Jira'dan HacknPlan'a geçilmiştir.
   - Tahmin puanları gözden geçirilmeli ve sprint planlama toplantılarında gerekli geri bildirimlerin developer'lar tarafından verildiğine emin olunmalı.
   - Örnek test sahneleri oluşturulmalı.
   - Yazılım ürünlerinde çıkan sorunlar daha hızlı çözülmeli.
