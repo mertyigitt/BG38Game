@@ -32,6 +32,8 @@ Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşların�
 - Platformer
 - Rekabatçi oyunlar
 
+---
+
 # Sprint 1
 - **Sprint içinde tamamlanması tahmin edilen puan:** Sprint içi puan değerlendirmesi 70 olarak belirlenmiştir.
 - **Puan tamamlama mantığı:** Proje boyunca tamamlanması gereken backlog puanı her sprint öncesi belirlendiği için net değildir. İlk Sprint için bitirilmesi istenilen puan sayısı 70 olarak belirlenmiştir.
