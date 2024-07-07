@@ -9,7 +9,8 @@ namespace BG38Game
         public static DataManager Instance { get; private set; }
 
         private Dictionary<int, string> playerChoices = new Dictionary<int, string>();
-        //public PlatformManager platformManager;
+
+        public int correctIndex;
 
         void Awake()
         {
@@ -37,9 +38,9 @@ namespace BG38Game
             return playerChoices.ContainsKey(questionIndex) ? playerChoices[questionIndex] : null; 
         }
 
-        /*public void SetCorrectAnswerForPlatform(string correctAnswer)
+        public void SetCorrectAnswerForPlatform(int correctIdx)
         {
-            platformManager.SetCorrectAnswer(correctAnswer);
-        }*/
+            correctIndex = correctIdx;
+        }
     }
 }

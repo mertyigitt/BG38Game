@@ -56,7 +56,7 @@ namespace BG38Game
             string choice = options[currentQuestionIndex][index];
             DataManager.Instance.SaveChoice(currentQuestionIndex, choice); //belki oyuncu numaralarini key olarak kullanabiliriz.
             questionPanel.SetActive(false);
-            //DataManager.Instance.SetCorrectAnswerForPlatform(choice);
+            DataManager.Instance.SetCorrectAnswerForPlatform(index);
         }
     }
 }
