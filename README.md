@@ -35,6 +35,7 @@ Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşların�
 ---
 
 # Sprint 1
+- **Sprint Notları:** Görevler board'ların içine yazılmıştır. Board'lardaki görev item'lara tıklandığında görevlerin detayları okunabilir.
 - **Sprint içinde tamamlanması tahmin edilen puan:** Sprint içi puan değerlendirmesi 70 olarak belirlenmiştir.
 - **Puan tamamlama mantığı:** Proje boyunca tamamlanması gereken backlog puanı her sprint öncesi belirlendiği için net değildir. İlk Sprint için bitirilmesi istenilen puan sayısı 70 olarak belirlenmiştir.
 - **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. Daily Scrum toplantısı örneği jpeg olarak paylaşılmaktadır:
