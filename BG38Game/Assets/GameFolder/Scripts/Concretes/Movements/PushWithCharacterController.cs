@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using BG38Game.Abstracts.Controllers;
 using BG38Game.Abstracts.Movements;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace BG38Game.Movements
 {
-    public class PushWithCharacterController : MonoBehaviour , IPusher
+    public class PushWithCharacterController : NetworkBehaviour , IPusher
     {
         [SerializeField] float pushPower;
         [SerializeField] float pushDuration;
@@ -36,6 +37,7 @@ namespace BG38Game.Movements
 
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            if (!IsOwner) return;
             if (_isPushing)
             {
                 CharacterController otherCharacterController = hit.collider.GetComponent<CharacterController>();

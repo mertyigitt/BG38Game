@@ -2,12 +2,13 @@ using BG38Game.Abstracts.Controllers;
 using BG38Game.Abstracts.Inputs;
 using BG38Game.Abstracts.Movements;
 using BG38Game.Movements;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
 namespace BG38Game.Controllers
 {
-    public class PlayerController : MonoBehaviour, IEntityController
+    public class PlayerController : NetworkBehaviour, IEntityController
     {
         #region Self Variables
 
@@ -55,6 +56,7 @@ namespace BG38Game.Controllers
 
         private void Update()
         {
+            if (!IsOwner) return;
             _direction = _input.Direction;
             _xRotator.RotationAction(_input.Rotation.x, turnSpeed);
             _yRotator.RotationAction(_input.Rotation.y,turnSpeed);
@@ -62,6 +64,7 @@ namespace BG38Game.Controllers
 
         private void FixedUpdate()
         {
+            if (!IsOwner) return;
             _mover.MoveAction(_direction , moveSpeed);
             
             if (_input.IsJump)
