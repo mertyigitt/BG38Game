@@ -550,13 +550,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 2.3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.144, z: 0}
 --- !u!114 &6415797450336046072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,6 +594,8 @@ MonoBehaviour:
   turnSpeed: 5
   jumpSpeed: 2
   turnTransform: {fileID: 5901787312664796433}
+  waitForKick: 0.86
+  animationAcceleration: 4
   cam: {fileID: 8307125606094571995}
   camController: {fileID: 7161939184170856961}
 --- !u!114 &1759017838406969866
@@ -855,7 +857,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 841c6399c31188c48a6461fe12ada204,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 841c6399c31188c48a6461fe12ada204,
         type: 3}

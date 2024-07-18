@@ -25,7 +25,7 @@ namespace BG38Game.Controllers
         [SerializeField] private Transform turnTransform;
 
         [SerializeField] private float waitForKick = 0.86f;
-        [SerializeField] private float animationAcceleration = 2f;
+        [SerializeField] private float animationAcceleration = 4f;
         
         [SerializeField] private Camera cam;
         [SerializeField] private CinemachineVirtualCamera camController;
