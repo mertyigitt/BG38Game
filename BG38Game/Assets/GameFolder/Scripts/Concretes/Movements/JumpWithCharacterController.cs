@@ -10,6 +10,7 @@ namespace BG38Game.Movements
     {
         private CharacterController _characterController;
         private Gravity _gravity;
+        
 
 
         public JumpWithCharacterController(IEntityController entityController)

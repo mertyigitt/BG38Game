@@ -2,6 +2,7 @@ using System;
 using BG38Game.Abstracts.Controllers;
 using BG38Game.Abstracts.Inputs;
 using BG38Game.Abstracts.Movements;
+using BG38Game.Animations;
 using BG38Game.Movements;
 using Cinemachine;
 using Unity.Netcode;
@@ -37,6 +38,8 @@ namespace BG38Game.Controllers
         private IPusher _pusher;
         private Vector3 _direction;
         private Vector2 _rotation;
+        private PlayerAnimation _animation;
+        private Gravity _gravity;
 
         #endregion
 
@@ -57,6 +60,8 @@ namespace BG38Game.Controllers
             _yRotator = new RotatorYCharacter(this);
             _jumper = new JumpWithCharacterController(this);
             _pusher = GetComponent<PushWithCharacterController>();
+            _animation = new PlayerAnimation(this);
+            _gravity = GetComponent<Gravity>();
         }
 
         private void Start()
@@ -94,6 +99,13 @@ namespace BG38Game.Controllers
             {
                 _pusher.IsPushing = false;
             }
+        }
+
+        private void LateUpdate()
+        {
+            //2-playerAnimation script dosyasında yapılmış olan fonksiyonlar burada çalıştırılır.
+            _animation.JumpAnimation(_input.IsJump);
+            _animation.Grounded(_gravity.IsGroundedValue);
         }
     }
 }
