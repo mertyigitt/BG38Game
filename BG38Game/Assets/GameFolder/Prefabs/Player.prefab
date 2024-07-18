@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 2191714484085519243}
   - component: {fileID: 4767909347864534374}
   - component: {fileID: 8297462385800630296}
+  - component: {fileID: -1160971544713150089}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -781,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1075147984
+  GlobalObjectIdHash: 1129317153
   InScenePlacedSourceGlobalObjectIdHash: 1075147984
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -806,6 +807,8 @@ MonoBehaviour:
   turnSpeed: 5
   jumpSpeed: 2
   turnTransform: {fileID: 5901787312664796433}
+  cam: {fileID: 8307125606094571995}
+  camController: {fileID: 7161939184170856961}
 --- !u!114 &1759017838406969866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,9 +963,9 @@ MonoBehaviour:
   SyncRotAngleX: 1
   SyncRotAngleY: 1
   SyncRotAngleZ: 1
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
@@ -972,6 +975,18 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &-1160971544713150089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146001657412826631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8702cd3cb967e634a8d0565f6b7b8833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5005044529733082769
 GameObject:
   m_ObjectHideFlags: 0

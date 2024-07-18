@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
+using Unity.Netcode;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BG38Game.Multiplayers
 {
@@ -15,6 +17,7 @@ namespace BG38Game.Multiplayers
         [SerializeField] private TextMeshProUGUI lobbyCode;
         [SerializeField] private GameObject playerInfoContainer;
         [SerializeField] private GameObject playerInfoPrefab;
+        [SerializeField] private List<Player> players;
         private CurrentLobby _currentLobby;
         private string lobbyId;
 
@@ -60,6 +63,11 @@ namespace BG38Game.Multiplayers
                     Destroy(child.gameObject);
                 }
             }
+        }
+        
+        public void NextScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

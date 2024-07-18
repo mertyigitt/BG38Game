@@ -1,7 +1,9 @@
+using System;
 using BG38Game.Abstracts.Controllers;
 using BG38Game.Abstracts.Inputs;
 using BG38Game.Abstracts.Movements;
 using BG38Game.Movements;
+using Cinemachine;
 using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -19,6 +21,9 @@ namespace BG38Game.Controllers
         [SerializeField] private float turnSpeed = 10f;
         [SerializeField] private float jumpSpeed = 10f;
         [SerializeField] private Transform turnTransform;
+        
+        [SerializeField] private Camera cam;
+        [SerializeField] private CinemachineVirtualCamera camController;
 
         #endregion
 
@@ -52,6 +57,15 @@ namespace BG38Game.Controllers
             _yRotator = new RotatorYCharacter(this);
             _jumper = new JumpWithCharacterController(this);
             _pusher = GetComponent<PushWithCharacterController>();
+        }
+
+        private void Start()
+        {
+            if (!IsOwner)
+            {
+                cam.enabled = false;
+                camController.enabled = false;
+            }
         }
 
         private void Update()

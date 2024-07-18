@@ -16,6 +16,7 @@ namespace BG38Game.Managers
     {
         [SerializeField] TMP_Dropdown playerCount;
         [SerializeField] private TMP_InputField inputField;
+        [SerializeField] private TextMeshProUGUI joinCode;
         private RelayHostData _hostData;
         private RelayJoinData _joinData;
         private string _playerID;
@@ -46,6 +47,7 @@ namespace BG38Game.Managers
                 Key = allocation.Key
             };
             _hostData.JoinCode = await RelayService.Instance.GetJoinCodeAsync(_hostData.AllocationID);
+            joinCode.text = _hostData.JoinCode;
             Debug.LogWarning("Join Code: " + _hostData.JoinCode);
             UnityTransport transport = NetworkManager.Singleton.gameObject.GetComponent<UnityTransport>();
             transport.SetRelayServerData(_hostData.IPv4Address, _hostData.Port, _hostData.AllocationIDBytes, _hostData.Key, _hostData.ConnectionData);
