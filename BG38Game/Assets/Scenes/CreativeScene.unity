@@ -1882,6 +1882,8 @@ MonoBehaviour:
   turnSpeed: 5
   jumpSpeed: 2
   turnTransform: {fileID: 5901787312515636953}
+  cam: {fileID: 8307125606483331603}
+  camController: {fileID: 7161939184286462409}
 --- !u!137 &3277695546193821103
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2401,13 +2403,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1181386207760844180}
   - component: {fileID: 4937531963172836344}
-  - component: {fileID: 6415797450485729328}
   - component: {fileID: 3242147751956325214}
   - component: {fileID: 1759017838795729346}
   - component: {fileID: 6634595788564906491}
   - component: {fileID: 2191714484233629763}
   - component: {fileID: 4767909347476299438}
-  - component: {fileID: 8297462385416066000}
+  - component: {fileID: 6634595788564906492}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3322,27 +3323,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6415797450485729328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4146001657029309903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1263063323
-  InScenePlacedSourceGlobalObjectIdHash: 1075147984
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!4 &6471589762012740196
 Transform:
   m_ObjectHideFlags: 0
@@ -3465,6 +3445,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gravity: -9.81
+--- !u!114 &6634595788564906492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146001657029309903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 4048263731
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!137 &6652813696138757342
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -4135,37 +4136,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8297462385416066000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4146001657029309903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!20 &8307125606483331603
 Camera:
   m_ObjectHideFlags: 0

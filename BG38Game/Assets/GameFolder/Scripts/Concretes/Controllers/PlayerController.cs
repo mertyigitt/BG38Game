@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace BG38Game.Controllers
 {
-    public class PlayerController : NetworkBehaviour, IEntityController
+    public class PlayerController : MonoBehaviour, IEntityController
     {
         #region Self Variables
 
@@ -61,16 +61,16 @@ namespace BG38Game.Controllers
 
         private void Start()
         {
-            if (!IsOwner)
-            {
-                cam.enabled = false;
-                camController.enabled = false;
-            }
+            // if (!IsOwner)
+            // {
+            //     cam.enabled = false;
+            //     camController.enabled = false;
+            // }
         }
 
         private void Update()
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
             _direction = _input.Direction;
             _xRotator.RotationAction(_input.Rotation.x, turnSpeed);
             _yRotator.RotationAction(_input.Rotation.y,turnSpeed);
@@ -78,7 +78,7 @@ namespace BG38Game.Controllers
 
         private void FixedUpdate()
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
             _mover.MoveAction(_direction , moveSpeed);
             
             if (_input.IsJump)

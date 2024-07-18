@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace BG38Game.Movements
 {
-    public class PushWithCharacterController : NetworkBehaviour , IPusher
+    public class PushWithCharacterController : MonoBehaviour , IPusher
     {
         [SerializeField] float pushPower;
         [SerializeField] float pushDuration;
@@ -37,7 +37,7 @@ namespace BG38Game.Movements
 
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
             if (_isPushing)
             {
                 CharacterController otherCharacterController = hit.collider.GetComponent<CharacterController>();
