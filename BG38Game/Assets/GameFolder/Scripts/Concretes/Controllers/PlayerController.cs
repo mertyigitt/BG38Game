@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using BG38Game.Abstracts.Controllers;
 using BG38Game.Abstracts.Inputs;
 using BG38Game.Abstracts.Movements;
@@ -22,6 +23,9 @@ namespace BG38Game.Controllers
         [SerializeField] private float turnSpeed = 10f;
         [SerializeField] private float jumpSpeed = 10f;
         [SerializeField] private Transform turnTransform;
+
+        [SerializeField] private float waitForKick = 0.86f;
+        [SerializeField] private float animationAcceleration = 2f;
         
         [SerializeField] private Camera cam;
         [SerializeField] private CinemachineVirtualCamera camController;
@@ -40,6 +44,9 @@ namespace BG38Game.Controllers
         private Vector2 _rotation;
         private PlayerAnimation _animation;
         private Gravity _gravity;
+        private bool myPush;
+        private float velocityX;
+        private float velocityZ;
 
         #endregion
 
@@ -62,6 +69,7 @@ namespace BG38Game.Controllers
             _pusher = GetComponent<PushWithCharacterController>();
             _animation = new PlayerAnimation(this);
             _gravity = GetComponent<Gravity>();
+            myPush = false;
         }
 
         private void Start()
@@ -77,6 +85,8 @@ namespace BG38Game.Controllers
         {
             //if (!IsOwner) return;
             _direction = _input.Direction;
+            AnimationDirection();
+
             _xRotator.RotationAction(_input.Rotation.x, turnSpeed);
             _yRotator.RotationAction(_input.Rotation.y,turnSpeed);
         }
@@ -84,20 +94,21 @@ namespace BG38Game.Controllers
         private void FixedUpdate()
         {
             //if (!IsOwner) return;
-            _mover.MoveAction(_direction , moveSpeed);
-            
+
+            if (myPush) return;
+
+            _mover.MoveAction(_direction, moveSpeed);
+
             if (_input.IsJump)
             {
                 _jumper.JumpAction(jumpSpeed);
             }
 
-            if (_input.IsPush)
+            if (_input.IsPush && _gravity.IsGroundedValue)
             {
+                myPush = true;
                 _pusher.PushAction();
-            }
-            else
-            {
-                _pusher.IsPushing = false;
+                StartCoroutine(WaitForKick());
             }
         }
 
@@ -106,6 +117,50 @@ namespace BG38Game.Controllers
             //2-playerAnimation script dosyasında yapılmış olan fonksiyonlar burada çalıştırılır.
             _animation.JumpAnimation(_input.IsJump);
             _animation.Grounded(_gravity.IsGroundedValue);
+            _animation.KickAnimation(myPush);
+            _animation.BasicMoveAnimation(velocityX, velocityZ);
+        }
+
+        private IEnumerator WaitForKick()
+        {
+            yield return new WaitForSeconds(waitForKick);
+            myPush = false;
+        }
+
+        private void AnimationDirection()
+        {
+            if (_direction.z > 0 && velocityZ <= 1)
+            {
+                velocityZ += Time.deltaTime * animationAcceleration;
+            }
+            if (_direction.x > 0 && velocityX <= 1)
+            {
+                velocityX += Time.deltaTime * animationAcceleration;
+            }
+            if (_direction.z < 0 && velocityZ >= -1)
+            {
+                velocityZ -= Time.deltaTime * animationAcceleration;
+            }
+            if (_direction.x < 0 && velocityX >= -1)
+            {
+                velocityX -= Time.deltaTime * animationAcceleration;
+            }
+            if (_direction.z == 0 && velocityZ > 0)
+            {
+                velocityZ -= Time.deltaTime * animationAcceleration;
+            }
+            if (_direction.x == 0 && velocityX > 0)
+            {
+                velocityX -= Time.deltaTime * animationAcceleration;
+            }
+            if (_direction.z == 0 && velocityZ < 0)
+            {
+                velocityZ += Time.deltaTime * animationAcceleration;
+            }
+            if (_direction.x == 0 && velocityX < 0)
+            {
+                velocityX += Time.deltaTime * animationAcceleration;
+            }
         }
     }
 }

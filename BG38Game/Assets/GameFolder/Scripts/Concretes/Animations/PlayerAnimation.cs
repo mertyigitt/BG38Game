@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BG38Game.Animations
 {
-    public class PlayerAnimation : MonoBehaviour
+    public class PlayerAnimation
     {
         private Animator _animator;
 
@@ -23,6 +23,19 @@ namespace BG38Game.Animations
         public void Grounded(bool isGrounded)
         {
             _animator.SetBool("isGrounded", isGrounded);
+        }
+
+        public void KickAnimation(bool isKicked)
+        {
+            _animator.SetBool("isKicked", isKicked);
+        }
+
+        public void BasicMoveAnimation(float velocityX, float velocityZ)
+        {
+            //0.7071
+
+            _animator.SetFloat("X Velocity", velocityX);
+            _animator.SetFloat("Z Velocity", velocityZ);
         }
     }
 }
