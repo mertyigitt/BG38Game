@@ -1,14 +1,17 @@
-# Takım İsmi
-Unity Grup 38
+<details> 
+<summary><h1>Read Me</h1></summary>
 
 # Takım İle İlgili Bilgiler
 
+## Takım İsmi
+Unity Grup 38
+
 ## Takım Üyeleri
-- Muhammed Enes Keskin: Scrum Master/Developer
-- Müge Berra Öztekin: Product Owner/Developer
+- Muhammed Enes Keskin: Scrum Master / 3D Artist
+- Müge Berra Öztekin: Product Owner / UI Designer
 - Mert Göktuğ Yiğit: Developer
 - Mehmet Can Şensoy: Developer
-- Merve Olgun: Developer
+- Merve Olgun: Level Designer
 
 ## Oyun İsmi
 BG38GAME
@@ -32,9 +35,14 @@ Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşların�
 - Platformer
 - Rekabetçi oyunlar
 
+</details>
+
+
 ---
 
-# Sprint 1
+<details> 
+<summary><h1>Sprint 1</h1></summary>
+
 - **Sprint Notları:** Görevler board'ların içine yazılmıştır. Board'lardaki görev item'larına tıklandığında görevlerin detayları okunabilir.
 - **Sprint içinde tamamlanması tahmin edilen puan:** Sprint içi puan değerlendirmesi 70 olarak belirlenmiştir.
 - **Puan tamamlama mantığı:** Proje boyunca tamamlanması gereken backlog puanı her sprint öncesi belirlendiği için net değildir. İlk Sprint için bitirilmesi istenilen puan sayısı 70 olarak belirlenmiştir.
@@ -59,9 +67,44 @@ Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşların�
 ---
 
 - **Sprint Review:** Alınan kararlar: Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sahip olması kararlaştırılmıştır. Farklı harita ve levellerin olmasına ve bu levellerin mekaniklerine karar verilmiştir. Multiplayer modunun oluşturulması ve UI kitinin hazırlanması ise bir sonraki sprint'e ertelenmiştir. Ekstra eklenmesi gereken özellikler belirlenmiştir.
+
 - **Sprint Retrospective:**
   - Proje yönetim aracı değiştirilip Jira'dan HacknPlan'a geçilmiştir.
   - Tahmin puanları gözden geçirilmeli ve sprint planlama toplantılarında gerekli geri bildirimlerin developer'lar tarafından verildiğine emin olunmalı.
   - Örnek test sahneleri oluşturulmalı.
   - Yazılım ürünlerinde çıkan sorunlar daha hızlı çözülmeli.
   - Mekanik ve animasyonlar üzerinde daha fazla test yapılmalı.
+</details>
+
+---
+
+<details> 
+<summary><h1>Sprint 2</h1></summary>
+
+- **Sprint Notları:**
+- **Sprint içinde tamamlanması tahmin edilen puan:**
+- **Puan tamamlama mantığı:**
+- **Daily Scrum:** ... Daily Scrum toplantısı örneği jpeg olarak paylaşılmaktadır:
+
+Ekran Görüntüsü:
+
+---
+
+- **Sprint board update:** Sprint board ekran görüntüleri:
+
+---
+
+
+
+---
+
+- **Sprint Review:**
+
+- **Sprint Retrospective:**
+
+
+
+
+
+
+</details>
