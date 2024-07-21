@@ -101,10 +101,9 @@ Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşların�
 
 - **Ürün Durumu:** Ekran görüntüleri:
 
-  ![Ekran görüntüsü 2024-07-21 223633](https://github.com/user-attachments/assets/30f091f8-e9a0-4776-bdfd-ec379e4a7022)
+ ![Ekran görüntüsü 2024-07-21 223633](https://github.com/user-attachments/assets/30f091f8-e9a0-4776-bdfd-ec379e4a7022)
 
-
-   ![Bootcamp38](https://github.com/user-attachments/assets/c2790f21-fc9f-4bac-a7a6-6b872eb93978)    ![Bootcamp38 2](https://github.com/user-attachments/assets/27aedbdb-bf69-4eb7-b9aa-58e9400646f8)
+ ![Bootcamp38](https://github.com/user-attachments/assets/c2790f21-fc9f-4bac-a7a6-6b872eb93978) ![Bootcamp38 2](https://github.com/user-attachments/assets/27aedbdb-bf69-4eb7-b9aa-58e9400646f8)
 
 ---
 
