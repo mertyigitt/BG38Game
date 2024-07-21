@@ -14,13 +14,13 @@ Unity Grup 38
 - Merve Olgun: Level Designer
 
 ## Oyun İsmi
-BG38GAME
+Medieval Party
 
 ## Product Backlog URL
 [HacknPlan](https://app.hacknplan.com/p/207100/kanban?categoryId=0&boardId=571788)
 
 ## Oyun Açıklaması
-Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşlarınızla aynı server üzerinden oynayabileceğiniz ve hayatta kalmak için birbirinizi ekarte ederek mücadele edeceğiniz bir yapıya sahiptir. Oyunun ana yapısı, arkadaşlarınızın cevaplarını tahmin etmeye dayalıdır. Oyunun sonunda, en çok doğru tahminde bulunan oyuncu galip gelecektir.
+Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşlarınızla aynı server üzerinden oynayabileceğiniz ve hayatta kalmak için birbirinizi ekarte ederek mücadele edeceğiniz bir yapıya sahiptir. Oyunun ana yapısı, zorlu engellerden ve platformları atlatmak ve mücadeleyi zirvede tamamlamaktır.
 
 ## Oyun Özellikleri
 - 3D
@@ -68,6 +68,8 @@ Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşların�
 
 - **Sprint Review:** Alınan kararlar: Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sahip olması kararlaştırılmıştır. Farklı harita ve levellerin olmasına ve bu levellerin mekaniklerine karar verilmiştir. Multiplayer modunun oluşturulması ve UI kitinin hazırlanması ise bir sonraki sprint'e ertelenmiştir. Ekstra eklenmesi gereken özellikler belirlenmiştir.
 
+---
+
 - **Sprint Retrospective:**
   - Proje yönetim aracı değiştirilip Jira'dan HacknPlan'a geçilmiştir.
   - Tahmin puanları gözden geçirilmeli ve sprint planlama toplantılarında gerekli geri bildirimlerin developer'lar tarafından verildiğine emin olunmalı.
@@ -81,29 +83,46 @@ Sekiz kişiye kadar destek sunan bu 3D üçüncü şahıs oyunu, arkadaşların�
 <details> 
 <summary><h1>Sprint 2</h1></summary>
 
-- **Sprint Notları:**
-- **Sprint içinde tamamlanması tahmin edilen puan:**
-- **Puan tamamlama mantığı:**
-- **Daily Scrum:** ... Daily Scrum toplantısı örneği jpeg olarak paylaşılmaktadır:
+- **Sprint Notları:** Görevler board'ların içine yazılmıştır. Board'lardaki görev item'larına tıklandığında görevlerin detayları okunabilir.
+- **Sprint içinde tamamlanması tahmin edilen puan:** Sprint içi puan değerlendirmesi 130 olarak belirlenmiştir.
+- **Puan tamamlama mantığı:** Proje boyunca tamamlanması gereken backlog puanı her sprint öncesi belirlendiği için net değildir. İkinci Sprint için bitirilmesi istenilen puan sayısı 130 olarak belirlenmiştir.
+- **Daily Scrum:** Daily Scrum toplantıları Discord üzerinden yapılmıştır. Daily Scrum toplantısı örneği jpeg olarak paylaşılmaktadır:
 
-Ekran Görüntüsü:
 
----
-
-- **Sprint board update:** Sprint board ekran görüntüleri:
+![Ekran görüntüsü 2024-07-21 215433](https://github.com/user-attachments/assets/54430de4-4fd6-43f5-bedf-3bb1ec5eff2e)
 
 ---
 
+- **Sprint board update:** Sprint board ekran görüntüsü:
 
+![Ekran görüntüsü 2024-07-21 221140](https://github.com/user-attachments/assets/73799f19-fde1-4702-a22f-32df99b164ec)
 
 ---
 
-- **Sprint Review:**
+- **Ürün Durumu:** Ekran görüntüleri:
+
+  ![Ekran görüntüsü 2024-07-21 223633](https://github.com/user-attachments/assets/30f091f8-e9a0-4776-bdfd-ec379e4a7022)
+
+
+   ![Bootcamp38](https://github.com/user-attachments/assets/c2790f21-fc9f-4bac-a7a6-6b872eb93978)    ![Bootcamp38 2](https://github.com/user-attachments/assets/27aedbdb-bf69-4eb7-b9aa-58e9400646f8)
+
+---
+
+- **Sprint Review:** Alınan kararlar:
+  - Scrum çerçevesi boyunca ilerleyen sprintlerde zaman kısıtı nedeni ile oyunu küçültmek şeklinde ürünün revize edilmesi kararlaştırılmıştır.
+  - Oyunu tahmin mekaniklerinden arındırıp temayı, kurgu doğrultusunda bir online parti eğlence oyununa dönüştürmek uygun görülmüştür.
+  - Oyun içi lobby sistemi iptal edilmesi uygun görülmüştür.
+  - Oyunun github sayfasındaki readme kısmında yer alan oyun açıklaması başlığı alınan kararlar gereği revize edilmiştir.
+  - Sonraki sprintler için daha fazla kontrol, sağlam planlama, net ve belirgin aşamalar ile olası risklerden kaçınmak adına proje yönetiminde şelale metodu ile ilerleme kararı alınmıştır.
+  - Sahneler üzerine konuşulmuş ve iş planı oluşturulmuştur.
+  - Oyunun isminin Medieval Party olması kararlaştırılmıştır.
+
+---
 
 - **Sprint Retrospective:**
-
-
-
+   - Sprint süresi boyunca zamanın daha iyi değerlendirilmesine vurgu yapılmıştır.
+   - Sprint boyunca üyelerin daha aktif ve verimli çalışması istenmiştir.
+   - Zaman kısıtlaması ve çok fazla hata ile karşılaşma riskine karşı üçüncü sprintte şelale metodunun uygulanması kararlaştırılmıştır.
 
 
 
