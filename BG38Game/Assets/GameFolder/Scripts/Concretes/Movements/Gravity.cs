@@ -62,7 +62,7 @@ namespace BG38Game.Movements
         private bool IsGrounded()
         {
             RaycastHit hit;
-            float rayLength = _characterController.height * 0.5f + _characterController.skinWidth; 
+            float rayLength = _characterController.height * 0.001f + _characterController.skinWidth; 
             
             if (Physics.Raycast(transform.position, Vector3.down, out hit, rayLength))
             {

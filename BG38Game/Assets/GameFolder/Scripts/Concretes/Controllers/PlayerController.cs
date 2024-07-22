@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace BG38Game.Controllers
 {
-    public class PlayerController : MonoBehaviour, IEntityController
+    public class PlayerController : NetworkBehaviour, IEntityController
     {
         #region Self Variables
 
@@ -74,16 +74,16 @@ namespace BG38Game.Controllers
 
         private void Start()
         {
-            // if (!IsOwner)
-            // {
-            //     cam.enabled = false;
-            //     camController.enabled = false;
-            // }
+            if (!IsOwner)
+            {
+                cam.enabled = false;
+                camController.enabled = false;
+            }
         }
 
         private void Update()
         {
-            //if (!IsOwner) return;
+            if (!IsOwner) return;
             _direction = _input.Direction;
             AnimationDirection();
 
@@ -93,7 +93,7 @@ namespace BG38Game.Controllers
 
         private void FixedUpdate()
         {
-            //if (!IsOwner) return;
+            if (!IsOwner) return;
 
             if (myPush) return;
 

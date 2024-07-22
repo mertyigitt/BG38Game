@@ -56,5 +56,10 @@ namespace BG38Game
                 }
             }
         }
+
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
     }
 }

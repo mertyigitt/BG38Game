@@ -47,7 +47,7 @@ namespace BG38Game.Managers
                 Key = allocation.Key
             };
             _hostData.JoinCode = await RelayService.Instance.GetJoinCodeAsync(_hostData.AllocationID);
-            joinCode.text = _hostData.JoinCode;
+            joinCode.text = "JoinCode: " + _hostData.JoinCode;
             Debug.LogWarning("Join Code: " + _hostData.JoinCode);
             UnityTransport transport = NetworkManager.Singleton.gameObject.GetComponent<UnityTransport>();
             transport.SetRelayServerData(_hostData.IPv4Address, _hostData.Port, _hostData.AllocationIDBytes, _hostData.Key, _hostData.ConnectionData);
