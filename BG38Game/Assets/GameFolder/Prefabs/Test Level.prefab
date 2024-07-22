@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5692582776529552782}
   - component: {fileID: 4283240232400887083}
   - component: {fileID: 8379951428812884766}
+  - component: {fileID: 4244371152459688464}
   m_Layer: 0
   m_Name: floor_tile_large (9)
   m_TagString: Untagged
@@ -106,6 +107,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &4244371152459688464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291336107222590091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &899527641073311687
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +140,7 @@ GameObject:
   - component: {fileID: 5238526543331077396}
   - component: {fileID: 3430934092255047623}
   - component: {fileID: 6318287618865056369}
+  - component: {fileID: 4812465354426869715}
   m_Layer: 0
   m_Name: floor_tile_large (1)
   m_TagString: Untagged
@@ -212,6 +235,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &4812465354426869715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899527641073311687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1503321136916429591
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +268,7 @@ GameObject:
   - component: {fileID: 1481204656568631180}
   - component: {fileID: 6123434601188115659}
   - component: {fileID: 8579785161468085588}
+  - component: {fileID: 5713923815574043296}
   m_Layer: 0
   m_Name: floor_tile_large (7)
   m_TagString: Untagged
@@ -318,6 +363,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &5713923815574043296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503321136916429591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &2109819575983598586
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +397,7 @@ GameObject:
   - component: {fileID: 261102774113124964}
   - component: {fileID: 9195110115268200349}
   - component: {fileID: 7220915351750300737}
+  - component: {fileID: 3688537031636551392}
   m_Layer: 0
   m_Name: Moving Platform (1)
   m_TagString: Untagged
@@ -440,6 +507,27 @@ MonoBehaviour:
   moveDistance: 5
   speed: 1.7
   delayTime: 1
+--- !u!114 &3688537031636551392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109819575983598586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &2608199123179856882
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +540,7 @@ GameObject:
   - component: {fileID: 3486881248380784776}
   - component: {fileID: 8450091494181013011}
   - component: {fileID: 2979440238254321135}
+  - component: {fileID: 7864249534414294281}
   m_Layer: 0
   m_Name: floor_tile_large
   m_TagString: Untagged
@@ -546,6 +635,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &7864249534414294281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2608199123179856882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &2739869052180242242
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +669,7 @@ GameObject:
   - component: {fileID: 3951537048511741372}
   - component: {fileID: 5090464630224523698}
   - component: {fileID: 6457038480579571547}
+  - component: {fileID: 7201995198429884072}
   m_Layer: 0
   m_Name: spikes
   m_TagString: Untagged
@@ -669,6 +780,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0399229, y: 0.039967835, z: 0.003711062}
   m_Center: {x: -0.000021469592, y: 0.0000023543835, z: 0.022384772}
+--- !u!114 &7201995198429884072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739869052180242242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &3166859408664539613
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +814,7 @@ GameObject:
   - component: {fileID: 7436303547105617812}
   - component: {fileID: 6477661725837984552}
   - component: {fileID: 40176246925632023}
+  - component: {fileID: 799435346829243677}
   m_Layer: 0
   m_Name: Moving Platform (4)
   m_TagString: Untagged
@@ -791,6 +924,27 @@ MonoBehaviour:
   moveDistance: 5
   speed: 1.7
   delayTime: 1
+--- !u!114 &799435346829243677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166859408664539613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &3464184141782465772
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +957,7 @@ GameObject:
   - component: {fileID: 1028751964672559630}
   - component: {fileID: 7947440634987596203}
   - component: {fileID: 5326929943902713542}
+  - component: {fileID: 5837397317584584500}
   m_Layer: 0
   m_Name: floor_tile_large (10)
   m_TagString: Untagged
@@ -897,6 +1052,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &5837397317584584500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464184141782465772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &3502744007326700852
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +1085,7 @@ GameObject:
   - component: {fileID: 964069640729381655}
   - component: {fileID: 7748286165268628437}
   - component: {fileID: 1696767933709644263}
+  - component: {fileID: 381393715092248917}
   m_Layer: 0
   m_Name: floor_tile_large (5)
   m_TagString: Untagged
@@ -1003,6 +1180,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &381393715092248917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502744007326700852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &3835772772887587497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1213,7 @@ GameObject:
   - component: {fileID: 5556522314417422770}
   - component: {fileID: 3447179307726056624}
   - component: {fileID: 3097921306724483007}
+  - component: {fileID: 4231122104968485781}
   m_Layer: 0
   m_Name: floor_tile_large (6)
   m_TagString: Untagged
@@ -1109,6 +1308,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &4231122104968485781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835772772887587497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &4024253523441981789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1342,7 @@ GameObject:
   - component: {fileID: 4428469104314156718}
   - component: {fileID: 2668572779512299028}
   - component: {fileID: 8165821986231217703}
+  - component: {fileID: 9207957273033524268}
   m_Layer: 0
   m_Name: Moving Platform
   m_TagString: Untagged
@@ -1231,6 +1452,27 @@ MonoBehaviour:
   moveDistance: 5
   speed: 1.7
   delayTime: 1
+--- !u!114 &9207957273033524268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024253523441981789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &4403489283894877488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1486,7 @@ GameObject:
   - component: {fileID: 3370827282656818286}
   - component: {fileID: 7310333079789544079}
   - component: {fileID: 6367313255613101514}
+  - component: {fileID: 302610682379728699}
   m_Layer: 0
   m_Name: Moving Platform (2)
   m_TagString: Untagged
@@ -1353,6 +1596,27 @@ MonoBehaviour:
   moveDistance: 5
   speed: 1.7
   delayTime: 1
+--- !u!114 &302610682379728699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403489283894877488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &4447890188180945354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1630,7 @@ GameObject:
   - component: {fileID: 2202638727314917791}
   - component: {fileID: 7517533071786627654}
   - component: {fileID: 6904229593761425768}
+  - component: {fileID: 9012217144732015644}
   m_Layer: 0
   m_Name: Rotating Platfrom
   m_TagString: Untagged
@@ -1473,6 +1738,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateDirection: {x: 0, y: 1, z: 0}
   rotationSpeed: 0.7
+--- !u!114 &9012217144732015644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447890188180945354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &5164052893942589604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1771,7 @@ GameObject:
   - component: {fileID: 4267442494073412637}
   - component: {fileID: 5916695806478730146}
   - component: {fileID: 2197147359876773316}
+  - component: {fileID: 5930124510927764761}
   m_Layer: 0
   m_Name: floor_tile_large (2)
   m_TagString: Untagged
@@ -1579,6 +1866,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &5930124510927764761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5164052893942589604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &5397144926999211087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1900,7 @@ GameObject:
   - component: {fileID: 2609904202150137504}
   - component: {fileID: 3759695229294884820}
   - component: {fileID: 5257842622929521650}
+  - component: {fileID: 4569238799068665457}
   m_Layer: 0
   m_Name: Rotating Platfrom (1)
   m_TagString: Untagged
@@ -1699,6 +2008,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateDirection: {x: 0, y: 1, z: 0}
   rotationSpeed: 0.7
+--- !u!114 &4569238799068665457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397144926999211087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &5414261445832222482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +2041,7 @@ GameObject:
   - component: {fileID: 8412793423662301750}
   - component: {fileID: 5643748365164631864}
   - component: {fileID: 1051879952422197033}
+  - component: {fileID: 3451196642937021791}
   m_Layer: 0
   m_Name: floor_tile_large (4)
   m_TagString: Untagged
@@ -1805,6 +2136,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &3451196642937021791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414261445832222482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &5519185657074565139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +2169,7 @@ GameObject:
   - component: {fileID: 1281300976330710657}
   - component: {fileID: 3304316471259561896}
   - component: {fileID: 558286408735953255}
+  - component: {fileID: 7335375945320110075}
   m_Layer: 0
   m_Name: floor_tile_large (3)
   m_TagString: Untagged
@@ -1911,6 +2264,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &7335375945320110075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5519185657074565139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &5867063172315459235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,6 +2297,7 @@ GameObject:
   - component: {fileID: 7517994374464681234}
   - component: {fileID: 74078611596492624}
   - component: {fileID: 1440747571662083456}
+  - component: {fileID: 1755349580458296053}
   m_Layer: 0
   m_Name: floor_tile_large (8)
   m_TagString: Untagged
@@ -2017,6 +2392,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &1755349580458296053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867063172315459235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &6906021629944954810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,6 +2426,7 @@ GameObject:
   - component: {fileID: 6680659684682867616}
   - component: {fileID: 4547789726265860611}
   - component: {fileID: 4909729786907304125}
+  - component: {fileID: 3664703310538108563}
   m_Layer: 0
   m_Name: Moving Platform (3)
   m_TagString: Untagged
@@ -2139,6 +2536,27 @@ MonoBehaviour:
   moveDistance: 5
   speed: 1.7
   delayTime: 1
+--- !u!114 &3664703310538108563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6906021629944954810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &7236234165391752677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2570,7 @@ GameObject:
   - component: {fileID: 1417422148407218478}
   - component: {fileID: 7915797782639043779}
   - component: {fileID: 751135100925558055}
+  - component: {fileID: 9079887093512755109}
   m_Layer: 0
   m_Name: Moving Platform (5)
   m_TagString: Untagged
@@ -2261,6 +2680,27 @@ MonoBehaviour:
   moveDistance: 5
   speed: 1.7
   delayTime: 1
+--- !u!114 &9079887093512755109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236234165391752677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &7352189265510269148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2270,6 +2710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5555711695484397397}
+  - component: {fileID: 556688796752459366}
   m_Layer: 0
   m_Name: floor tiles
   m_TagString: Untagged
@@ -2304,6 +2745,27 @@ Transform:
   - {fileID: 6848800274713483231}
   m_Father: {fileID: 7232389874310320844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &556688796752459366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7352189265510269148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &7798799834412986331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,6 +2778,7 @@ GameObject:
   - component: {fileID: 2327472747748018820}
   - component: {fileID: 5835284649798624713}
   - component: {fileID: 3225181419272270367}
+  - component: {fileID: 2317022543494892979}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -2410,6 +2873,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2317022543494892979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798799834412986331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &8347336665663729788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2906,7 @@ GameObject:
   - component: {fileID: 8786284455194575224}
   - component: {fileID: 503846075669066169}
   - component: {fileID: 1831852103535848092}
+  - component: {fileID: 7974740410671345944}
   m_Layer: 0
   m_Name: floor_tile_large (11)
   m_TagString: Untagged
@@ -2516,6 +3001,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2634147639830484596, guid: 063727eebc4aa8849be38f570a5febe5, type: 3}
+--- !u!114 &7974740410671345944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347336665663729788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &8458262308550330461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,6 +3031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7232389874310320844}
+  - component: {fileID: 8877127108906981312}
   m_Layer: 0
   m_Name: Test Level
   m_TagString: Untagged
@@ -2560,6 +3067,27 @@ Transform:
   - {fileID: 5555711695484397397}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8877127108906981312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458262308550330461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &8942366807168210939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +3101,7 @@ GameObject:
   - component: {fileID: 8601517895987547030}
   - component: {fileID: 5702521357805255453}
   - component: {fileID: 3640297122697400143}
+  - component: {fileID: 7751868004935894195}
   m_Layer: 0
   m_Name: Barrier Platform
   m_TagString: Untagged
@@ -2682,6 +3211,27 @@ MonoBehaviour:
   moveDistance: 3
   speed: 10
   delayTime: 1
+--- !u!114 &7751868004935894195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942366807168210939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &9210373669250763129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,6 +3243,7 @@ GameObject:
   - component: {fileID: 2426053150213474865}
   - component: {fileID: 8179066407567210648}
   - component: {fileID: 5809211676862844829}
+  - component: {fileID: 7883444867294778517}
   m_Layer: 0
   m_Name: floor_tile_big_spikes
   m_TagString: Untagged
@@ -2765,3 +3316,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7883444867294778517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9210373669250763129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1671164059
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1

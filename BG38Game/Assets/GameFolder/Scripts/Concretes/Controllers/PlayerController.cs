@@ -115,6 +115,8 @@ namespace BG38Game.Controllers
         private void LateUpdate()
         {
             //2-playerAnimation script dosyasında yapılmış olan fonksiyonlar burada çalıştırılır.
+            if (!IsOwner) return;
+
             _animation.JumpAnimation(_input.IsJump);
             _animation.Grounded(_gravity.IsGroundedValue);
             _animation.KickAnimation(myPush);
