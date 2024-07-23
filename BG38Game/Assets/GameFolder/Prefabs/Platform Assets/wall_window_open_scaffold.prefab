@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8903790241873673281}
   - component: {fileID: 8370620964930127876}
   - component: {fileID: 8324507493416052592}
-  - component: {fileID: 7814444969987346670}
+  - component: {fileID: 7363932850425231412}
   m_Layer: 0
   m_Name: wall_window_open_scaffold
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7814444969987346670
-MeshCollider:
+--- !u!65 &7363932850425231412
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9200090720505334235, guid: 8702d5ff67ce4e248a1368aebb938dfd, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4.000001, y: 4, z: 1.0000008}
+  m_Center: {x: 0, y: 2, z: -0.00000031292447}
