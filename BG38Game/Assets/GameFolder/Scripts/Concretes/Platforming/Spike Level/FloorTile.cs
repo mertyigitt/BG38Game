@@ -6,11 +6,11 @@ namespace BG38Game
 {
     public class FloorTile : MonoBehaviour
     {
-        public GameObject spikes; // Reference to the spikes child object
-        [SerializeField] private Color flashColor = Color.red; // The color to flash
-        public float flashDuration = 0.2f; // Duration of each flash
-        public int flashCount = 3; // Number of times to flash
-        public float spikeUpTime = 2f; // How long the spikes stay up
+        public GameObject spikes; 
+        [SerializeField] private Color flashColor = Color.red; 
+        public float flashDuration = 0.2f; 
+        public int flashCount = 3; 
+        public float spikeUpTime = 2f; 
 
         private Color originalColor;
         private Renderer tileRenderer;
