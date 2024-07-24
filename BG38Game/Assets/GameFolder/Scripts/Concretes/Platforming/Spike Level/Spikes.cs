@@ -11,11 +11,13 @@ namespace BG38Game
 
         private Vector3 originalPosition;
         private Vector3 targetPosition;
+        private AudioSource audioSource;
 
         void Start()
         {
             originalPosition = transform.localPosition;
             targetPosition = originalPosition + new Vector3(0, moveDistance, 0);
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void ActivateSpike(float spikeUpTime)
@@ -31,6 +33,7 @@ namespace BG38Game
                 transform.localPosition = Vector3.MoveTowards(transform.localPosition, targetPosition, moveSpeed * Time.deltaTime);
                 yield return null;
             }
+            audioSource.Play();
 
             yield return new WaitForSeconds(spikeUpTime);
 
@@ -39,6 +42,7 @@ namespace BG38Game
                 transform.localPosition = Vector3.MoveTowards(transform.localPosition, originalPosition, moveSpeed * Time.deltaTime);
                 yield return null;
             }
+            audioSource.Play();
         }
     }
 }
