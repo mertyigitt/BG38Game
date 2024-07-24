@@ -47,6 +47,7 @@ namespace BG38Game.Controllers
         private bool myPush;
         private float velocityX;
         private float velocityZ;
+        private AudioSource _audioSource;
 
         #endregion
 
@@ -70,6 +71,7 @@ namespace BG38Game.Controllers
             _animation = new PlayerAnimation(this);
             _gravity = GetComponent<Gravity>();
             myPush = false;
+            _audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -101,6 +103,8 @@ namespace BG38Game.Controllers
 
             if (_input.IsJump)
             {
+                if(_gravity.IsGroundedValue) _audioSource.Play();
+
                 _jumper.JumpAction(jumpSpeed);
             }
 
@@ -108,6 +112,7 @@ namespace BG38Game.Controllers
             {
                 myPush = true;
                 _pusher.PushAction();
+
                 StartCoroutine(WaitForKick());
             }
         }
