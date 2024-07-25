@@ -133,7 +133,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2fa0f9a4e13c99a4f92a74b25312c8c2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -142,7 +142,7 @@ AudioSource:
   Priority: 130
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 6
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -177,7 +177,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 3978826778011918870}
   - component: {fileID: 1817160213375277369}
   - component: {fileID: 1155097408408144957}
-  - component: {fileID: 3672927829159917073}
+  - component: {fileID: 2385547977825608629}
   m_Layer: 0
   m_Name: floor_tile_big_spikes
   m_TagString: Untagged
@@ -320,8 +320,8 @@ MonoBehaviour:
   flashDuration: 0.2
   flashCount: 3
   spikeUpTime: 2.5
---- !u!64 &3672927829159917073
-MeshCollider:
+--- !u!65 &2385547977825608629
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -338,7 +338,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1910194057624958710, guid: fe6c421126307784eb4352857291b7a8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0.20000473, z: 4}
+  m_Center: {x: 0, y: 0.000002026558, z: 0}
