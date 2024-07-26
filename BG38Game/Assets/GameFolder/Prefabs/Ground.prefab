@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5638377073696073450}
   - component: {fileID: 7974692528449189695}
   - component: {fileID: 7309765351468880297}
-  - component: {fileID: 989971232400641552}
+  - component: {fileID: 4510470507711770220}
   m_Layer: 0
   m_Name: floor_tile_big_spikes (2)
   m_TagString: Untagged
@@ -209,8 +209,8 @@ MonoBehaviour:
   flashDuration: 0.2
   flashCount: 4
   spikeUpTime: 1.5
---- !u!64 &989971232400641552
-MeshCollider:
+--- !u!65 &4510470507711770220
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,10 +227,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1910194057624958710, guid: fe6c421126307784eb4352857291b7a8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0.20000473, z: 4}
+  m_Center: {x: 0, y: 0.0000020265577, z: -0.0000011920929}
 --- !u!1 &124750219643788944
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +883,7 @@ GameObject:
   - component: {fileID: 3104908005285130161}
   - component: {fileID: 165677714558713699}
   - component: {fileID: 8518680450617357101}
-  - component: {fileID: 67185061690430572}
+  - component: {fileID: 5383953159657496728}
   m_Layer: 0
   m_Name: floor_tile_big_spikes (5)
   m_TagString: Untagged
@@ -975,8 +974,8 @@ MonoBehaviour:
   flashDuration: 0.2
   flashCount: 4
   spikeUpTime: 1.5
---- !u!64 &67185061690430572
-MeshCollider:
+--- !u!65 &5383953159657496728
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -993,10 +992,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1910194057624958710, guid: fe6c421126307784eb4352857291b7a8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0.20000473, z: 4}
+  m_Center: {x: -0.0000019073486, y: 0.0000020265577, z: -0.0000011920929}
 --- !u!1 &351735032443603646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,7 +3975,7 @@ GameObject:
   - component: {fileID: 4990427293570820103}
   - component: {fileID: 9081188586491965493}
   - component: {fileID: 8457373491756047645}
-  - component: {fileID: 8954720128380757990}
+  - component: {fileID: 2445394053303232935}
   m_Layer: 0
   m_Name: floor_tile_big_spikes (1)
   m_TagString: Untagged
@@ -4068,8 +4066,8 @@ MonoBehaviour:
   flashDuration: 0.2
   flashCount: 4
   spikeUpTime: 1.5
---- !u!64 &8954720128380757990
-MeshCollider:
+--- !u!65 &2445394053303232935
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4086,10 +4084,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1910194057624958710, guid: fe6c421126307784eb4352857291b7a8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0.20000473, z: 4}
+  m_Center: {x: 0, y: 0.000002026558, z: 1.1519648e-19}
 --- !u!1 &1481182769871693027
 GameObject:
   m_ObjectHideFlags: 0
@@ -9407,7 +9404,7 @@ GameObject:
   - component: {fileID: 2593569357271213746}
   - component: {fileID: 5604899520300998992}
   - component: {fileID: 4561209546382328327}
-  - component: {fileID: 1094237682846348596}
+  - component: {fileID: 7151934180935163155}
   m_Layer: 0
   m_Name: floor_tile_big_spikes
   m_TagString: Untagged
@@ -9498,8 +9495,8 @@ MonoBehaviour:
   flashDuration: 0.2
   flashCount: 4
   spikeUpTime: 1.5
---- !u!64 &1094237682846348596
-MeshCollider:
+--- !u!65 &7151934180935163155
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9516,10 +9513,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1910194057624958710, guid: fe6c421126307784eb4352857291b7a8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0.20000473, z: 4}
+  m_Center: {x: -0.0000009536743, y: 0.000002026558, z: 1.1519648e-19}
 --- !u!1 &3180513690917208688
 GameObject:
   m_ObjectHideFlags: 0
@@ -27314,7 +27310,7 @@ GameObject:
   - component: {fileID: 5537808391838744851}
   - component: {fileID: 272313355552472417}
   - component: {fileID: 4931608937976981751}
-  - component: {fileID: 9196667687986146729}
+  - component: {fileID: 1146627832718365403}
   m_Layer: 0
   m_Name: floor_tile_big_spikes (3)
   m_TagString: Untagged
@@ -27405,8 +27401,8 @@ MonoBehaviour:
   flashDuration: 0.2
   flashCount: 4
   spikeUpTime: 1.5
---- !u!64 &9196667687986146729
-MeshCollider:
+--- !u!65 &1146627832718365403
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -27423,10 +27419,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1910194057624958710, guid: fe6c421126307784eb4352857291b7a8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0.20000473, z: 4}
+  m_Center: {x: -0.0000009536743, y: 0.000002026558, z: 1.1519648e-19}
 --- !u!1 &8186816139224137242
 GameObject:
   m_ObjectHideFlags: 0
@@ -29559,7 +29554,7 @@ GameObject:
   - component: {fileID: 7001576768720665369}
   - component: {fileID: 1254952039704755336}
   - component: {fileID: 2096500640251942064}
-  - component: {fileID: 4598655279060106066}
+  - component: {fileID: 951949318410166284}
   m_Layer: 0
   m_Name: floor_tile_big_spikes (4)
   m_TagString: Untagged
@@ -29650,8 +29645,8 @@ MonoBehaviour:
   flashDuration: 0.2
   flashCount: 4
   spikeUpTime: 1.5
---- !u!64 &4598655279060106066
-MeshCollider:
+--- !u!65 &951949318410166284
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29668,10 +29663,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1910194057624958710, guid: fe6c421126307784eb4352857291b7a8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0.20000473, z: 4}
+  m_Center: {x: 0, y: 0.000002026558, z: 0.0000038146973}
 --- !u!1 &8985415963303248382
 GameObject:
   m_ObjectHideFlags: 0

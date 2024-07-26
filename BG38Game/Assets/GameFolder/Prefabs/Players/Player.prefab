@@ -1330,7 +1330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1129317153
+  GlobalObjectIdHash: 1075147984
   InScenePlacedSourceGlobalObjectIdHash: 1075147984
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -1359,6 +1359,7 @@ MonoBehaviour:
   animationAcceleration: 4
   cam: {fileID: 8307125606094571995}
   camController: {fileID: 7161939184170856961}
+  knockbackForce: 20
 --- !u!114 &1759017838406969866
 MonoBehaviour:
   m_ObjectHideFlags: 0
