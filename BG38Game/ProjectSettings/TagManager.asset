@@ -4,22 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
   - finish
-=======
-  - Sledgehammer
->>>>>>> origin/main
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - Player1
-  - Player2
-  - Ground
-  - Player
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

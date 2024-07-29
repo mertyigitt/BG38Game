@@ -494,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591140490011497344}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30519792, y: -0, z: -0, w: 0.952289}
+  m_LocalRotation: {x: 0.10308461, y: -0, z: -0, w: 0.9946726}
   m_LocalPosition: {x: 0, y: 2.5500002, z: -5.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -599,8 +599,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829013252186489975}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30519792, y: -0, z: -0, w: 0.952289}
-  m_LocalPosition: {x: 0, y: 2.5500998, z: -1.6899998}
+  m_LocalRotation: {x: 0.10308461, y: -0, z: -0, w: 0.9946726}
+  m_LocalPosition: {x: 0, y: 2.5500002, z: -5.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1260,6 +1260,7 @@ GameObject:
   - component: {fileID: 4937531963325141040}
   - component: {fileID: 6415797450336046072}
   - component: {fileID: 3242147752106008726}
+  - component: {fileID: 4588296366986187185}
   - component: {fileID: 1759017838406969866}
   - component: {fileID: 6634595788412076595}
   - component: {fileID: 2191714484085519243}
@@ -1268,7 +1269,7 @@ GameObject:
   - component: {fileID: -1160971544713150089}
   - component: {fileID: 4148083709801336440}
   - component: {fileID: 1294369194340954604}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1352,13 +1353,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  turnSpeed: 7
+  turnSpeed: 8
   jumpSpeed: 2
   turnTransform: {fileID: 5901787312664796433}
   waitForKick: 0.86
   animationAcceleration: 4
   cam: {fileID: 8307125606094571995}
   camController: {fileID: 7161939184170856961}
+--- !u!114 &4588296366986187185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146001657412826631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36ea38f63ffece46a91c86c6ad894dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPoints: 0
 --- !u!114 &1759017838406969866
 MonoBehaviour:
   m_ObjectHideFlags: 0
