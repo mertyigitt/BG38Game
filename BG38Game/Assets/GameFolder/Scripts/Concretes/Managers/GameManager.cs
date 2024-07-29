@@ -18,6 +18,7 @@ namespace BG38Game
         [SerializeField] private GameObject levelPrefab;
         [SerializeField] private Button startButton;
         [SerializeField] private Transform[] spawnPoint;
+        [SerializeField] private GameObject lastLevel;
         public NetworkObject[] pl;
         public List<GameObject> players;
 
@@ -36,12 +37,18 @@ namespace BG38Game
         
         public void StartGame()
         {
+            if (lastLevel is not null)
+            {
+                Destroy(lastLevel);
+            }
+            var obj = Instantiate(levelPrefab, Vector3.zero, Quaternion.identity);
+            lastLevel = obj;
+            obj.GetComponent<NetworkObject>().Spawn();
+            
             for (int i = 0; i < players.Count; i++)
             {
                 RequestTeleportAllPlayersServerRpc(spawnPoint[i].position);
             }
-            
-            Instantiate(levelPrefab, Vector3.zero, Quaternion.identity);
         }
         
         [ServerRpc(RequireOwnership = false)]
@@ -61,5 +68,6 @@ namespace BG38Game
         {
             Application.Quit();
         }
+        
     }
 }

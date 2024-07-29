@@ -169,5 +169,6 @@ namespace BG38Game.Controllers
                 velocityX += Time.deltaTime * animationAcceleration;
             }
         }
+        
     }
 }
