@@ -34,6 +34,9 @@ namespace BG38Game.Movements
         public float GravityValue => _gravity;
         public bool IsGroundedValue => _isGrounded;
 
+        public float GroundedOffset = -0.14f;
+        public LayerMask GroundLayers;
+
         #endregion
 
         #endregion
@@ -61,7 +64,18 @@ namespace BG38Game.Movements
         
         private bool IsGrounded()
         {
-            RaycastHit hit;
+            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
+                transform.position.z);
+
+            if(Physics.CheckSphere(spherePosition, _characterController.radius, GroundLayers, QueryTriggerInteraction.Ignore)){
+                return true;
+            }
+
+            return false;
+
+
+
+            /*RaycastHit hit;
             float rayLength = _characterController.height * 0.001f + _characterController.skinWidth; 
             
             if (Physics.Raycast(transform.position, Vector3.down, out hit, rayLength))
@@ -69,7 +83,7 @@ namespace BG38Game.Movements
                 return true;
             }
 
-            return false;
+            return false;*/
         }
     }
 }
