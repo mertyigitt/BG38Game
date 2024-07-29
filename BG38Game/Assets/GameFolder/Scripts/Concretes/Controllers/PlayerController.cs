@@ -30,6 +30,8 @@ namespace BG38Game.Controllers
         [SerializeField] private Camera cam;
         [SerializeField] private CinemachineVirtualCamera camController;
 
+        //[SerializeField] private float knockbackForce = 20f; // The force with which to throw the player
+
         #endregion
 
         #region Private Variables
@@ -48,6 +50,11 @@ namespace BG38Game.Controllers
         private float velocityX;
         private float velocityZ;
         private AudioSource _audioSource;
+
+        private bool isKnockedBack = false;
+        /*private float knockbackDuration = 0.5f; // How long the knockback lasts
+        private float knockbackTimer = 0f;*/
+        private float tempSpeed = 10f;
 
         #endregion
 
@@ -81,16 +88,29 @@ namespace BG38Game.Controllers
                 cam.enabled = false;
                 camController.enabled = false;
             }
+
+            tempSpeed = moveSpeed;
         }
 
         private void Update()
         {
             if (!IsOwner) return;
-            _direction = _input.Direction;
+            if (!isKnockedBack) _direction = _input.Direction;
             AnimationDirection();
 
             _xRotator.RotationAction(_input.Rotation.x, turnSpeed);
             _yRotator.RotationAction(_input.Rotation.y,turnSpeed);
+
+            /*if (isKnockedBack)
+            {
+                knockbackTimer -= Time.deltaTime;
+                if (knockbackTimer <= 0)
+                {
+                    moveSpeed = tempSpeed;
+                    isKnockedBack = false;
+                    //velocity = Vector3.zero;
+                }
+            }*/
         }
 
         private void FixedUpdate()
@@ -127,6 +147,33 @@ namespace BG38Game.Controllers
             _animation.KickAnimation(myPush);
             _animation.BasicMoveAnimation(velocityX, velocityZ);
         }
+
+
+        /*void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Sledgehammer"))
+            {
+                //Debug.Log("We did it?");
+                Vector3 forceDirection = transform.position - other.transform.position;
+                
+                forceDirection.y = 1f;
+                
+
+                forceDirection.Normalize();
+
+                ApplyKnockback(forceDirection, knockbackForce);
+            }
+        }
+
+        public void ApplyKnockback(Vector3 direction, float force)
+        {
+            Debug.Log("Yes sir");
+            isKnockedBack = true;
+            knockbackTimer = knockbackDuration;
+            _direction = direction;
+            moveSpeed = force;
+        }*/
+
 
         private IEnumerator WaitForKick()
         {

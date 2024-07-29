@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:BG38Game/Assets/GameFolder/Prefabs/Cube.prefab.meta
 guid: 595ab4f8080133944a3cb12bd00bd2c6
 PrefabImporter:
+========
+guid: 5ea4b23f9f6b7d849aacea9334ef5445
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> origin/main:BG38Game/Assets/GameFolder/Prefabs/Traps.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
