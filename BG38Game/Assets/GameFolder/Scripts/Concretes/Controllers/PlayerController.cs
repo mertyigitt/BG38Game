@@ -119,7 +119,10 @@ namespace BG38Game.Controllers
 
             if (myPush) return;
 
-            _mover.MoveAction(_direction, moveSpeed);
+            Vector3 moveDirection = _direction * moveSpeed;
+            moveDirection = Vector3.ProjectOnPlane(moveDirection, Vector3.up);
+
+            _mover.MoveAction(moveDirection.normalized, moveSpeed);
 
             if (_input.IsJump)
             {
