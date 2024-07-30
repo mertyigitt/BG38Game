@@ -26,6 +26,7 @@ namespace BG38Game.Controllers
 
         [SerializeField] private float waitForKick = 0.86f;
         [SerializeField] private float animationAcceleration = 4f;
+        [SerializeField] private float countdownTime = 5f;
         
         [SerializeField] private Camera cam;
         [SerializeField] private CinemachineVirtualCamera camController;
@@ -50,6 +51,8 @@ namespace BG38Game.Controllers
         private float velocityX;
         private float velocityZ;
         private AudioSource _audioSource;
+
+        //private CharacterController characterController;
 
         private bool isKnockedBack = false;
         /*private float knockbackDuration = 0.5f; // How long the knockback lasts
@@ -79,6 +82,8 @@ namespace BG38Game.Controllers
             _gravity = GetComponent<Gravity>();
             myPush = false;
             _audioSource = GetComponent<AudioSource>();
+
+            //characterController = GetComponent<CharacterController>();
         }
 
         private void Start()
@@ -219,6 +224,67 @@ namespace BG38Game.Controllers
                 velocityX += Time.deltaTime * animationAcceleration;
             }
         }
-        
+
+        // Disabling
+        [ClientRpc]
+        public void DisableVisibleBodyClientRpc()
+        {
+            Transform visibleBody = transform.GetChild(0); 
+            if (visibleBody != null)
+            {
+                visibleBody.gameObject.SetActive(false);
+            }
+        }
+
+        [ClientRpc]
+        public void DisableCharacterControllerClientRpc()
+        {
+            var characterController = GetComponent<CharacterController>();
+            if (characterController != null)
+            {
+                characterController.enabled = false;
+            }
+        }
+
+        // Enabling
+        [ClientRpc]
+        public void EnableVisibleBodyClientRpc()
+        {
+            Transform visibleBody = transform.GetChild(0); 
+            if (visibleBody != null)
+            {
+                visibleBody.gameObject.SetActive(true);
+                DisableCharacterControllerClientRpc();
+            }
+        }
+
+        [ClientRpc]
+        public void EnableCharacterControllerClientRpc()
+        {
+            var characterController = GetComponent<CharacterController>();
+            if (characterController != null)
+            {
+                characterController.enabled = true;
+            }
+        }
+
+        public void DisableCharacter()
+        {
+            DisableCharacterControllerClientRpc();
+            DisableVisibleBodyClientRpc();
+        }
+
+        public void EnableCharacter()
+        {
+            EnableVisibleBodyClientRpc();
+            StartCoroutine(EnableCharacterControllerAfterCountdown());
+        }
+
+        private IEnumerator EnableCharacterControllerAfterCountdown()
+        {
+            yield return new WaitForSeconds(countdownTime); 
+            EnableCharacterControllerClientRpc();
+        }
+
     }
 }

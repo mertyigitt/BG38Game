@@ -1307,7 +1307,7 @@ Transform:
   m_GameObject: {fileID: 312816891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.94, y: 0, z: -3.11}
+  m_LocalPosition: {x: 1.94, y: 0.47, z: 0.22000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3983,7 +3983,7 @@ Transform:
   m_GameObject: {fileID: 1299474849}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.11}
+  m_LocalPosition: {x: -0.63, y: 0.47, z: 0.23000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5216,18 +5216,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelPrefabs:
   - {fileID: 8458262308550330461, guid: 7bed4b43da25cc04491a759e2b5db093, type: 3}
-  - {fileID: 8458262308550330461, guid: 7bed4b43da25cc04491a759e2b5db093, type: 3}
+  - {fileID: 6793860743802346504, guid: 056695a554d81014daa8c97b02ee9f84, type: 3}
+  - {fileID: 2770396088206895876, guid: d5dfaeb1f252dd04ba6f9262f0e8085e, type: 3}
   startButton: {fileID: 955420105}
   spawnPoint:
   - {fileID: 1299474850}
   - {fileID: 312816892}
   lastLevel: {fileID: 235862308}
   levelCount: 0
-  pointUI: {fileID: 4071814419365945292, guid: 449df478f2522b042a222eca914c21ca, type: 3}
+  pointUI: {fileID: 4071814419365945292, guid: 968f1a96feb94064ab4ac80329b3f126, type: 3}
   pointPanel: {fileID: 1278518132}
   panelIUs: []
   pointControllers: []
   players: []
+  waitAfterFinish: 3
 --- !u!4 &1607716871
 Transform:
   m_ObjectHideFlags: 0

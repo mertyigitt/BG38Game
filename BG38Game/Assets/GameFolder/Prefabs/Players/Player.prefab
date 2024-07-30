@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1075147984
+  GlobalObjectIdHash: 1129317153
   InScenePlacedSourceGlobalObjectIdHash: 1075147984
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -1358,6 +1358,7 @@ MonoBehaviour:
   turnTransform: {fileID: 5901787312664796433}
   waitForKick: 0.86
   animationAcceleration: 4
+  countdownTime: 20
   cam: {fileID: 8307125606094571995}
   camController: {fileID: 7161939184170856961}
 --- !u!114 &4588296366986187185
@@ -1372,7 +1373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36ea38f63ffece46a91c86c6ad894dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPoints: 0
+  currentPoints:
+    m_InternalValue: 0
 --- !u!114 &1759017838406969866
 MonoBehaviour:
   m_ObjectHideFlags: 0

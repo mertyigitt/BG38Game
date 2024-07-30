@@ -31,7 +31,9 @@ namespace BG38Game
         [SerializeField] private List<GameObject> panelIUs;
         public List<PointController> pointControllers;
         public List<GameObject> players;
-        
+
+        [SerializeField] private float waitAfterFinish = 3f;
+        //[SerializeField] private float countdownTime = 3f;
 
         private void Awake()
         {
@@ -52,6 +54,39 @@ namespace BG38Game
         }
 
         public void StartGame()
+        {
+            StartCoroutine(LevelTransition());
+        }
+
+        private IEnumerator LevelTransition()
+        {
+            yield return new WaitForSeconds(waitAfterFinish);
+
+            foreach (var client in NetworkManager.Singleton.ConnectedClients)
+            {
+                var playerObject = client.Value.PlayerObject;
+                var playerController = playerObject.GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    playerController.DisableCharacter();
+                }
+            }
+
+            StartNewLevel();
+
+            foreach (var client in NetworkManager.Singleton.ConnectedClients)
+            {
+                var playerObject = client.Value.PlayerObject;
+                var playerController = playerObject.GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    Debug.Log("enable çaðýrýldý");
+                    playerController.EnableCharacter();
+                }
+            }
+        }
+
+        public void StartNewLevel()
         {
             if (levelCount > levelPrefabs.Length - 1)
             {
