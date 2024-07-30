@@ -1,3 +1,4 @@
+using BG38Game.Controllers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,6 +39,8 @@ namespace BG38Game
 
                     pointController.AddPoints(pointsForPositions[playerRank]);
                     Debug.Log($"{other.gameObject.name} finished in position {playerRank + 1} and received {pointsForPositions[playerRank]} points.");
+
+                    DisablePlayer(other.gameObject);
                 }
                 
                 if (finishedPlayers == totalPlayer)
@@ -46,6 +49,15 @@ namespace BG38Game
                     GameManager.Instance.CreatePointUI();
                     finishedPlayers = 0;
                 }
+            }
+        }
+
+        private void DisablePlayer(GameObject player)
+        {
+            var playerController = player.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.DisableCharacter();
             }
         }
     }
