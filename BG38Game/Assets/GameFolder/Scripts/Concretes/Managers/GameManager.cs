@@ -1,13 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using BG38Game.Controllers;
 using BG38Game.Managers;
+using TMPro;
 using Unity.Mathematics;
 using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 using Unity.Netcode;
 using Unity.Netcode.Components;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace BG38Game
@@ -15,12 +21,17 @@ namespace BG38Game
     public class GameManager : NetworkBehaviour
     {
         public static GameManager Instance;
-        [SerializeField] private GameObject levelPrefab;
+        [SerializeField] private GameObject[] levelPrefabs;
         [SerializeField] private Button startButton;
         [SerializeField] private Transform[] spawnPoint;
         [SerializeField] private GameObject lastLevel;
-        public NetworkObject[] pl;
+        [SerializeField] private int levelCount;
+        [SerializeField] private GameObject pointUI;
+        [SerializeField] private GameObject pointPanel;
+        [SerializeField] private List<GameObject> panelIUs;
+        public List<PointController> pointControllers;
         public List<GameObject> players;
+        
 
         private void Awake()
         {
@@ -34,14 +45,23 @@ namespace BG38Game
                 Destroy(this);
             }
         }
-        
+
+        private void Start()
+        {
+            levelCount = 0;
+        }
+
         public void StartGame()
         {
+            if (levelCount > levelPrefabs.Length - 1)
+            {
+                levelCount = 0;
+            }
             if (lastLevel is not null)
             {
                 Destroy(lastLevel);
             }
-            var obj = Instantiate(levelPrefab, Vector3.zero, Quaternion.identity);
+            var obj = Instantiate(levelPrefabs[levelCount], Vector3.zero, Quaternion.identity);
             lastLevel = obj;
             obj.GetComponent<NetworkObject>().Spawn();
             
@@ -49,6 +69,7 @@ namespace BG38Game
             {
                 RequestTeleportAllPlayersServerRpc(spawnPoint[i].position);
             }
+            levelCount++;
         }
         
         [ServerRpc(RequireOwnership = false)]
@@ -68,6 +89,70 @@ namespace BG38Game
         {
             Application.Quit();
         }
+
+        public void CreatePointUI()
+        {
+            CreatePointUIClientRPC();
+        }
+        [ClientRpc]
+        public void CreatePointUIClientRPC()
+        {
+            if (panelIUs is not null)
+            {
+                foreach (var panelui in panelIUs)
+                {
+                    Destroy(panelui);
+                }
+                panelIUs.Clear();
+            }
+
+            foreach (var client in NetworkManager.Singleton.ConnectedClients)
+            {
+                var playerObject = client.Value.PlayerObject;
+                var pointController = playerObject.GetComponent<PointController>();
+                
+                var obj = Instantiate(pointUI,Vector3.zero, Quaternion.identity);
+                obj.GetComponent<NetworkObject>().Spawn();
+                UpdateClientScore(playerObject.name, pointController.currentPoints.Value, obj.GetComponent<NetworkObject>().NetworkObjectId);
+                obj.GetComponent<RectTransform>().SetParent(pointPanel.transform);
+                panelIUs.Add(obj);
+            }
+            
+            // paneluis = paneluis.OrderByDescending(child =>
+            // {
+            //     var scoreText = child.transform.Find("PlayerPointText").GetComponent<TextMeshProUGUI>();
+            //     int score;
+            //     if (int.TryParse(scoreText.text, out score))
+            //     {
+            //         return score;
+            //     }
+            //
+            //     return 0;
+            // }).ToList();
+            //
+            // for (int i = 0; i < paneluis.Count; i++)
+            // {
+            //     paneluis[i].transform.SetSiblingIndex(i);
+            // }
+        }
         
+        [ClientRpc]
+        void UpdateClientScoreClientRPC(string name, int score, ulong networkObjectId)
+        {
+            string playerName = name;
+            var networkObject = NetworkManager.Singleton.SpawnManager.SpawnedObjects[networkObjectId];
+            if (networkObject != null)
+            {
+                GameObject obj2 = networkObject.gameObject;
+                obj2.transform.Find("PlayerNameText").GetComponent<TextMeshProUGUI>().text = name;
+                obj2.transform.Find("PlayerPointText").GetComponent<TextMeshProUGUI>().text = score.ToString();
+            }
+            
+        }
+        
+        void UpdateClientScore(string name, int score, ulong networkObjectId)
+        {
+            UpdateClientScoreClientRPC(name,score,networkObjectId);
+        }
     }
 }

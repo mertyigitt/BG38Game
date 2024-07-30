@@ -39,11 +39,11 @@ namespace BG38Game
                     pointController.AddPoints(pointsForPositions[playerRank]);
                     Debug.Log($"{other.gameObject.name} finished in position {playerRank + 1} and received {pointsForPositions[playerRank]} points.");
                 }
-
                 
                 if (finishedPlayers == totalPlayer)
                 {
                     GameManager.Instance.StartGame();
+                    GameManager.Instance.CreatePointUI();
                     finishedPlayers = 0;
                 }
             }

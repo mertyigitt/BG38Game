@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace BG38Game
 {
-    public class PointController : MonoBehaviour
+    public class PointController : NetworkBehaviour
     {
-        public int currentPoints = 0;
+        public NetworkVariable<int> currentPoints = new NetworkVariable<int>(0);
 
         public void AddPoints(int points)
         {
-            currentPoints += points;
+            currentPoints.Value += points;
             Debug.Log($"{gameObject.name} has {currentPoints} points.");
         }
     }

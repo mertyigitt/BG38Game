@@ -52,6 +52,7 @@ namespace BG38Game.Managers
             UnityTransport transport = NetworkManager.Singleton.gameObject.GetComponent<UnityTransport>();
             transport.SetRelayServerData(_hostData.IPv4Address, _hostData.Port, _hostData.AllocationIDBytes, _hostData.Key, _hostData.ConnectionData);
             NetworkManager.Singleton.StartHost();
+            
         }
 
         public async void OnJoinClick()

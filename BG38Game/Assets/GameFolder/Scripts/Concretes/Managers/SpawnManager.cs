@@ -43,6 +43,8 @@ namespace BG38Game.Managers
             GameObject playerInstance = Instantiate(characterPrefab, GetSpawnPosition(), Quaternion.identity);
             playerInstance.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
             GameManager.Instance.players.Add(playerInstance.gameObject);
+            GameManager.Instance.pointControllers.Add(playerInstance.GetComponent<PointController>());
+            GameManager.Instance.CreatePointUI();
         }
 
         private int GetCharacterIndex(ulong clientId)
