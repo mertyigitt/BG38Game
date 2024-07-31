@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5684778539256516769}
   - component: {fileID: 647507161513346066}
   - component: {fileID: 4796449909275413036}
+  - component: {fileID: -619161276609442236}
   m_Layer: 0
   m_Name: KutukTahtaTestereYatay
   m_TagString: Untagged
@@ -137,3 +138,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b863d8a7a62f64f9fe6c6ff1551497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-619161276609442236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8922510674380238678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba4b99c7ffd0d14689762d343dea062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirection: {x: 1, y: 0, z: 0}
+  moveDistance: 5
+  speed: 2
+  delayTime: 0
