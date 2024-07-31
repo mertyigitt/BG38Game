@@ -44,7 +44,7 @@ namespace BG38Game.Managers
             playerInstance.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
             GameManager.Instance.players.Add(playerInstance.gameObject);
             GameManager.Instance.pointControllers.Add(playerInstance.GetComponent<PointController>());
-            GameManager.Instance.CreatePointUI();
+            //GameManager.Instance.CreatePointUI();
         }
 
         private int GetCharacterIndex(ulong clientId)

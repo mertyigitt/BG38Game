@@ -25,7 +25,7 @@ namespace BG38Game
         [SerializeField] private Button startButton;
         [SerializeField] private Transform[] spawnPoint;
         [SerializeField] private GameObject lastLevel;
-        [SerializeField] private int levelCount;
+        public int levelCount;
         [SerializeField] private GameObject pointUI;
         [SerializeField] private GameObject pointPanel;
         [SerializeField] private List<GameObject> panelIUs;
@@ -33,8 +33,13 @@ namespace BG38Game
         public List<GameObject> players;
 
         [SerializeField] private float waitAfterFinish = 3f;
-        [SerializeField] private float[] levelTimes;
+        public float[] levelTimes;
+        [SerializeField] private TextMeshProUGUI levelTimeText;
+        [SerializeField] private bool isStartLevel;
         [SerializeField] private GameObject finishObject;
+
+        [SerializeField] private float time;
+        [SerializeField] private GameObject timeCanvas;
 
         private Coroutine levelTimerCoroutine;
 
@@ -83,11 +88,12 @@ namespace BG38Game
                 var playerController = playerObject.GetComponent<PlayerController>();
                 if (playerController != null)
                 {
-                    Debug.Log("enable çaðýrýldý");
+                    Debug.Log("enable ï¿½aï¿½ï¿½rï¿½ldï¿½");
                     playerController.EnableCharacter();
                 }
             }
         }
+        
 
         public void StartNewLevel()
         {
@@ -108,22 +114,31 @@ namespace BG38Game
                 RequestTeleportAllPlayersServerRpc(spawnPoint[i].position);
             }
             levelCount++;
-
-            // Level timer baslangic
-            if (levelTimerCoroutine != null)
-            {
-                StopCoroutine(levelTimerCoroutine);
-            }
-            levelTimerCoroutine = StartCoroutine(LevelTimer(levelTimes[levelCount - 1]));
+            var canvas = Instantiate(timeCanvas, Vector3.zero, Quaternion.identity);
+            canvas.GetComponent<NetworkObject>().Spawn();
+            levelTimeText = canvas.transform.Find("LevelTimeText (TMP)").GetComponent<TextMeshProUGUI>();
+            levelTimeText.enabled = true;
+            levelTimeText.text = levelTimes[levelCount - 1].ToString();
         }
-        private IEnumerator LevelTimer(float duration)
+        public IEnumerator LevelTimer(float duration)
         {
-            yield return new WaitForSeconds(duration);
+            isStartLevel = true;
+            time = duration;
+
+            while (time > 0)
+            {
+                time -= Time.deltaTime;
+                levelTimeText.text = time.ToString("0");
+                yield return null;
+            }
 
             FinishTrigger finishTrigger = finishObject.GetComponent<FinishTrigger>();
             finishTrigger.resetFinishedPlayers();
             StartCoroutine(LevelTransition());
             CreatePointUI();
+            isStartLevel = false;
+            time = 0;
+            
         }
 
         [ServerRpc(RequireOwnership = false)]
@@ -159,6 +174,8 @@ namespace BG38Game
                 }
                 panelIUs.Clear();
             }
+
+            pointPanel.GetComponent<Image>().enabled = true;
 
             foreach (var client in NetworkManager.Singleton.ConnectedClients)
             {
