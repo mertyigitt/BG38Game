@@ -5224,12 +5224,18 @@ MonoBehaviour:
   - {fileID: 312816892}
   lastLevel: {fileID: 235862308}
   levelCount: 0
-  pointUI: {fileID: 4071814419365945292, guid: 968f1a96feb94064ab4ac80329b3f126, type: 3}
+  pointUI: {fileID: 4071814419365945292, guid: db6ba5bedb525f34ba2fcd1d7b3bb86b, type: 3}
   pointPanel: {fileID: 1278518132}
   panelIUs: []
   pointControllers: []
   players: []
   waitAfterFinish: 3
+  levelTimes:
+  - 15
+  - 50
+  - 30
+  finishObject: {fileID: 6908697577485100054, guid: eb61b39d34fc041459fabd57d0a069ff,
+    type: 3}
 --- !u!4 &1607716871
 Transform:
   m_ObjectHideFlags: 0

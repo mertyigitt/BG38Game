@@ -47,7 +47,7 @@ namespace BG38Game
                 {
                     GameManager.Instance.StartGame();
                     GameManager.Instance.CreatePointUI();
-                    finishedPlayers = 0;
+                    resetFinishedPlayers();
                 }
             }
         }
@@ -59,6 +59,11 @@ namespace BG38Game
             {
                 playerController.DisableCharacter();
             }
+        }
+
+        public void resetFinishedPlayers()
+        {
+            finishedPlayers = 0;
         }
     }
 }

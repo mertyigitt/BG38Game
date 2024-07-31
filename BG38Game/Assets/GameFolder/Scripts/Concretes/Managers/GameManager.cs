@@ -33,7 +33,10 @@ namespace BG38Game
         public List<GameObject> players;
 
         [SerializeField] private float waitAfterFinish = 3f;
-        //[SerializeField] private float countdownTime = 3f;
+        [SerializeField] private float[] levelTimes;
+        [SerializeField] private GameObject finishObject;
+
+        private Coroutine levelTimerCoroutine;
 
         private void Awake()
         {
@@ -105,8 +108,24 @@ namespace BG38Game
                 RequestTeleportAllPlayersServerRpc(spawnPoint[i].position);
             }
             levelCount++;
+
+            // Level timer baslangic
+            if (levelTimerCoroutine != null)
+            {
+                StopCoroutine(levelTimerCoroutine);
+            }
+            levelTimerCoroutine = StartCoroutine(LevelTimer(levelTimes[levelCount - 1]));
         }
-        
+        private IEnumerator LevelTimer(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+
+            FinishTrigger finishTrigger = finishObject.GetComponent<FinishTrigger>();
+            finishTrigger.resetFinishedPlayers();
+            StartCoroutine(LevelTransition());
+            CreatePointUI();
+        }
+
         [ServerRpc(RequireOwnership = false)]
         private void RequestTeleportAllPlayersServerRpc(Vector3 position)
         {

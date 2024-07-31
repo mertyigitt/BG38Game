@@ -386,10 +386,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3290509841751085518, guid: 4e24992b4de0b4947806b67f42f511da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4593258
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165508728124489659, guid: 4e24992b4de0b4947806b67f42f511da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.825
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165508728124489659, guid: 4e24992b4de0b4947806b67f42f511da,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.7500006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165508728124489659, guid: 4e24992b4de0b4947806b67f42f511da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.018271446
+      objectReference: {fileID: 0}
     - target: {fileID: 6756196010148702796, guid: 4e24992b4de0b4947806b67f42f511da,
         type: 3}
       propertyPath: m_Name
       value: Test Plane
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756196010148702796, guid: 4e24992b4de0b4947806b67f42f511da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7481987471169640090, guid: 4e24992b4de0b4947806b67f42f511da,
         type: 3}
@@ -440,6 +465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029575560818993112, guid: 4e24992b4de0b4947806b67f42f511da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

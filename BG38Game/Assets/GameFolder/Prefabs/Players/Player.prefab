@@ -1358,7 +1358,7 @@ MonoBehaviour:
   turnTransform: {fileID: 5901787312664796433}
   waitForKick: 0.86
   animationAcceleration: 4
-  countdownTime: 20
+  countdownTime: 6
   cam: {fileID: 8307125606094571995}
   camController: {fileID: 7161939184170856961}
 --- !u!114 &4588296366986187185
