@@ -23,7 +23,7 @@ namespace BG38Game
         public static GameManager Instance;
         [SerializeField] private GameObject[] levelPrefabs;
         [SerializeField] private Button startButton;
-        [SerializeField] private Transform[] spawnPoint;
+        [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private GameObject lastLevel;
         public int levelCount;
         [SerializeField] private GameObject pointUI;
@@ -40,12 +40,14 @@ namespace BG38Game
 
         [SerializeField] private float time;
         [SerializeField] private GameObject timeCanvas;
+        private GameObject existingCanvas;
 
-        private Coroutine levelTimerCoroutine;
+        private float startTime;
+        private bool isTiming;
 
         private void Awake()
         {
-            if (Instance is null)
+            if (Instance == null)
             {
                 Instance = this;
                 DontDestroyOnLoad(this);
@@ -58,7 +60,11 @@ namespace BG38Game
 
         private void Start()
         {
-            levelCount = 0;
+            if (IsServer)
+            {
+                levelCount = 0;
+                UpdateLevelCountClientRpc(levelCount);
+            }
         }
 
         public void StartGame()
@@ -68,8 +74,20 @@ namespace BG38Game
 
         private IEnumerator LevelTransition()
         {
+            if (isTiming)
+            {
+                StopCoroutine("LevelStartTimerCoroutine");
+                isTiming = false;
+            }
+            
+            if (existingCanvas != null)
+            {
+                Destroy(existingCanvas);
+                existingCanvas = null;
+            }
+            
             yield return new WaitForSeconds(waitAfterFinish);
-
+            
             foreach (var client in NetworkManager.Singleton.ConnectedClients)
             {
                 var playerObject = client.Value.PlayerObject;
@@ -81,64 +99,145 @@ namespace BG38Game
             }
 
             StartNewLevel();
-
+            
             foreach (var client in NetworkManager.Singleton.ConnectedClients)
             {
                 var playerObject = client.Value.PlayerObject;
                 var playerController = playerObject.GetComponent<PlayerController>();
                 if (playerController != null)
                 {
-                    Debug.Log("enable �a��r�ld�");
+                    Debug.Log("enable çağrıldı");
                     playerController.EnableCharacter();
                 }
             }
         }
-        
 
-        public void StartNewLevel()
+        void StartNewLevel()
         {
-            if (levelCount > levelPrefabs.Length - 1)
-            {
-                levelCount = 0;
-            }
-            if (lastLevel is not null)
-            {
-                Destroy(lastLevel);
-            }
-            var obj = Instantiate(levelPrefabs[levelCount], Vector3.zero, Quaternion.identity);
-            lastLevel = obj;
-            obj.GetComponent<NetworkObject>().Spawn();
-            
-            for (int i = 0; i < players.Count; i++)
-            {
-                RequestTeleportAllPlayersServerRpc(spawnPoint[i].position);
-            }
-            levelCount++;
-            var canvas = Instantiate(timeCanvas, Vector3.zero, Quaternion.identity);
-            canvas.GetComponent<NetworkObject>().Spawn();
-            levelTimeText = canvas.transform.Find("LevelTimeText (TMP)").GetComponent<TextMeshProUGUI>();
-            levelTimeText.enabled = true;
-            levelTimeText.text = levelTimes[levelCount - 1].ToString();
+            StartNewLevelClientRpc();
         }
-        public IEnumerator LevelTimer(float duration)
-        {
-            isStartLevel = true;
-            time = duration;
 
+        [ClientRpc]
+        public void StartNewLevelClientRpc()
+        {
+            if (IsServer)
+            {
+                if (levelCount > levelPrefabs.Length - 1)
+                {
+                    levelCount = 0;
+                }
+                if (lastLevel != null)
+                {
+                    Destroy(lastLevel);
+                }
+                var obj = Instantiate(levelPrefabs[levelCount], Vector3.zero, Quaternion.identity);
+                lastLevel = obj;
+                obj.GetComponent<NetworkObject>().Spawn();
+
+                for (int i = 0; i < players.Count && i < spawnPoints.Length; i++)
+                {
+                    RequestTeleportAllPlayersServerRpc(spawnPoints[i].position);
+                }
+
+                levelCount++;
+                UpdateLevelCountClientRpc(levelCount);
+                CreateTimeCanvas();
+
+                // Zamanlayıcıyı başlat
+            }
+        }
+    
+        [ClientRpc]
+        void UpdateLevelCountClientRpc(int newLevelCount)
+        {
+            levelCount = newLevelCount;
+        }
+
+        public void CreateTimeCanvas()
+        {
+            if (IsServer)
+            {
+                CreateTimeCanvasClientRpc();
+            }
+            else
+            {
+                CreateTimeCanvasServerRpc();
+            }
+        }
+
+        [ServerRpc(RequireOwnership = false)]
+        private void CreateTimeCanvasServerRpc()
+        {
+            CreateTimeCanvasClientRpc();
+        }
+    
+        [ClientRpc]
+        private void CreateTimeCanvasClientRpc()
+        {
+            if (existingCanvas != null)
+            {
+                Destroy(existingCanvas);
+            }
+
+            var canvas = Instantiate(timeCanvas, Vector3.zero, Quaternion.identity);
+            existingCanvas = canvas;
+
+            var levelTimeTextTransform = canvas.transform.Find("LevelTimeText (TMP)");
+            if (levelTimeTextTransform == null)
+            {
+                Debug.LogError("LevelTimeText (TMP) not found in the canvas.");
+                return;
+            }
+        
+            levelTimeText = levelTimeTextTransform.GetComponent<TextMeshProUGUI>();
+            if (levelTimeText == null)
+            {
+                Debug.LogError("TextMeshProUGUI component not found on LevelTimeText (TMP).");
+                return;
+            }
+
+            levelTimeText.enabled = true;
+        }
+
+        public void StartTimer(float duration)
+        {
+            if (isTiming)
+            {
+                StopCoroutine("LevelTimerCoroutine");
+            }
+
+            startTime = Time.time;
+            time = duration;
+            isTiming = true;
+            StartCoroutine(LevelTimerCoroutine());
+        }
+        private IEnumerator LevelTimerCoroutine()
+        {
             while (time > 0)
             {
-                time -= Time.deltaTime;
-                levelTimeText.text = time.ToString("0");
+                float elapsed = Time.time - startTime;
+                time = Mathf.Max(0, time - elapsed);
+                startTime = Time.time;
+                UpdateClientTimerClientRpc(time);
                 yield return null;
             }
+
 
             FinishTrigger finishTrigger = finishObject.GetComponent<FinishTrigger>();
             finishTrigger.resetFinishedPlayers();
             StartCoroutine(LevelTransition());
             CreatePointUI();
-            isStartLevel = false;
+            isTiming = false;
             time = 0;
-            
+        }
+
+        [ClientRpc]
+        void UpdateClientTimerClientRpc(float time)
+        {
+            if (levelTimeText != null)
+            {
+                levelTimeText.text = time.ToString("0");
+            }
         }
 
         [ServerRpc(RequireOwnership = false)]
@@ -161,56 +260,42 @@ namespace BG38Game
 
         public void CreatePointUI()
         {
-            CreatePointUIClientRPC();
+            CreatePointUIClientRpc();
         }
+
         [ClientRpc]
-        public void CreatePointUIClientRPC()
+        public void CreatePointUIClientRpc()
         {
-            if (panelIUs is not null)
+            if (IsServer)
             {
-                foreach (var panelui in panelIUs)
+                if (panelIUs != null)
                 {
-                    Destroy(panelui);
+                    foreach (var panelui in panelIUs)
+                    {
+                        Destroy(panelui);
+                    }
+                    panelIUs.Clear();
                 }
-                panelIUs.Clear();
-            }
 
-            pointPanel.GetComponent<Image>().enabled = true;
+                pointPanel.GetComponent<Image>().enabled = true;
 
-            foreach (var client in NetworkManager.Singleton.ConnectedClients)
-            {
-                var playerObject = client.Value.PlayerObject;
-                var pointController = playerObject.GetComponent<PointController>();
-                
-                var obj = Instantiate(pointUI,Vector3.zero, Quaternion.identity);
-                obj.GetComponent<NetworkObject>().Spawn();
-                UpdateClientScore(playerObject.name, pointController.currentPoints.Value, obj.GetComponent<NetworkObject>().NetworkObjectId);
-                obj.GetComponent<RectTransform>().SetParent(pointPanel.transform);
-                panelIUs.Add(obj);
+                foreach (var client in NetworkManager.Singleton.ConnectedClients)
+                {
+                    var playerObject = client.Value.PlayerObject;
+                    var pointController = playerObject.GetComponent<PointController>();
+
+                    var obj = Instantiate(pointUI, Vector3.zero, Quaternion.identity);
+                    obj.GetComponent<NetworkObject>().Spawn();
+                    UpdateClientScore(playerObject.name, pointController.currentPoints.Value, obj.GetComponent<NetworkObject>().NetworkObjectId);
+                    obj.GetComponent<RectTransform>().SetParent(pointPanel.transform);
+                    panelIUs.Add(obj);
+                }
             }
-            
-            // paneluis = paneluis.OrderByDescending(child =>
-            // {
-            //     var scoreText = child.transform.Find("PlayerPointText").GetComponent<TextMeshProUGUI>();
-            //     int score;
-            //     if (int.TryParse(scoreText.text, out score))
-            //     {
-            //         return score;
-            //     }
-            //
-            //     return 0;
-            // }).ToList();
-            //
-            // for (int i = 0; i < paneluis.Count; i++)
-            // {
-            //     paneluis[i].transform.SetSiblingIndex(i);
-            // }
         }
-        
+
         [ClientRpc]
-        void UpdateClientScoreClientRPC(string name, int score, ulong networkObjectId)
+        void UpdateClientScoreClientRpc(string name, int score, ulong networkObjectId)
         {
-            string playerName = name;
             var networkObject = NetworkManager.Singleton.SpawnManager.SpawnedObjects[networkObjectId];
             if (networkObject != null)
             {
@@ -218,12 +303,11 @@ namespace BG38Game
                 obj2.transform.Find("PlayerNameText").GetComponent<TextMeshProUGUI>().text = name;
                 obj2.transform.Find("PlayerPointText").GetComponent<TextMeshProUGUI>().text = score.ToString();
             }
-            
         }
-        
+
         void UpdateClientScore(string name, int score, ulong networkObjectId)
         {
-            UpdateClientScoreClientRPC(name,score,networkObjectId);
+            UpdateClientScoreClientRpc(name, score, networkObjectId);
         }
     }
 }

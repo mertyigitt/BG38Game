@@ -285,7 +285,7 @@ namespace BG38Game.Controllers
             yield return new WaitForSeconds(countdownTime); 
             EnableCharacterControllerClientRpc();
             var gameManager = GameManager.Instance;
-            StartCoroutine(gameManager.LevelTimer(gameManager.levelTimes[gameManager.levelCount - 1]));
+            gameManager.StartTimer(gameManager.levelTimes[gameManager.levelCount - 1]);
         }
 
     }

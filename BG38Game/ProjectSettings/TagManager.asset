@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - finish
+  - TimeCanvas
   layers:
   - Default
   - TransparentFX

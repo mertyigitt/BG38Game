@@ -9,10 +9,21 @@ namespace BG38Game
     {
         public NetworkVariable<int> currentPoints = new NetworkVariable<int>(0);
 
-        public void AddPoints(int points)
+        [ServerRpc(RequireOwnership = false)]
+        public void AddPointsServerRpc(int points)
         {
             currentPoints.Value += points;
-            Debug.Log($"{gameObject.name} has {currentPoints} points.");
+            Debug.Log($"{gameObject.name} has {currentPoints.Value} points.");
         }
     }
+    // public class PointController : NetworkBehaviour
+    // {
+    //     public NetworkVariable<int> currentPoints = new NetworkVariable<int>(0);
+    //
+    //     public void AddPoints(int points)
+    //     {
+    //         currentPoints.Value += points;
+    //         Debug.Log($"{gameObject.name} has {currentPoints} points.");
+    //     }
+    // }
 }

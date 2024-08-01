@@ -263,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &166122441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2589,7 +2589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &647221602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3886,7 +3886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8156863}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3926,9 +3926,9 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 39
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -5219,7 +5219,7 @@ MonoBehaviour:
   - {fileID: 6793860743802346504, guid: 056695a554d81014daa8c97b02ee9f84, type: 3}
   - {fileID: 2770396088206895876, guid: d5dfaeb1f252dd04ba6f9262f0e8085e, type: 3}
   startButton: {fileID: 955420105}
-  spawnPoint:
+  spawnPoints:
   - {fileID: 1299474850}
   - {fileID: 312816892}
   lastLevel: {fileID: 235862308}
@@ -5231,7 +5231,7 @@ MonoBehaviour:
   players: []
   waitAfterFinish: 3
   levelTimes:
-  - 15
+  - 55
   - 50
   - 30
   levelTimeText: {fileID: 0}
