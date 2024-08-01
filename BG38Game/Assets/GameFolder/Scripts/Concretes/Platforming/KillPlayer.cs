@@ -6,16 +6,16 @@ namespace BG38Game
 {
     public class KillPlayer : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        private void OnTriggerEnter(Collider other)
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            if (other.CompareTag("Player"))
+            {
+                Teleportable teleportable = other.GetComponent<Teleportable>();
+                if (teleportable != null)
+                {
+                    teleportable.TeleportClientRpc(teleportable.checkPointPosition);
+                }
+            }
         }
     }
 }

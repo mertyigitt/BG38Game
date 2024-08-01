@@ -11,7 +11,12 @@ namespace BG38Game
 {
     public class Teleportable : NetworkBehaviour
     {
-        
+        public Vector3 checkPointPosition;
+
+        private void Start()
+        {
+            checkPointPosition = transform.position;
+        }
 
         [ClientRpc]
         public void TeleportClientRpc(Vector3 position)
