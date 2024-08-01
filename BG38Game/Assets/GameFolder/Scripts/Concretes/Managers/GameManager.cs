@@ -128,7 +128,8 @@ namespace BG38Game
                 }
                 if (lastLevel != null)
                 {
-                    Destroy(lastLevel);
+                    lastLevel.GetComponent<NetworkObject>().Despawn();
+                    //Destroy(lastLevel);
                 }
                 var obj = Instantiate(levelPrefabs[levelCount], Vector3.zero, Quaternion.identity);
                 lastLevel = obj;
@@ -224,7 +225,7 @@ namespace BG38Game
 
 
             FinishTrigger finishTrigger = finishObject.GetComponent<FinishTrigger>();
-            finishTrigger.resetFinishedPlayers();
+            finishTrigger.ResetFinishedPlayers();
             StartCoroutine(LevelTransition());
             CreatePointUI();
             isTiming = false;

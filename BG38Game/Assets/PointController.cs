@@ -12,6 +12,8 @@ namespace BG38Game
         [ServerRpc(RequireOwnership = false)]
         public void AddPointsServerRpc(int points)
         {
+            if (!IsServer) return;
+
             currentPoints.Value += points;
             Debug.Log($"{gameObject.name} has {currentPoints.Value} points.");
         }
