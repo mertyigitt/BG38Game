@@ -174,7 +174,7 @@ Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sa
 <br>
 
 ## Sprint Review: Alınan kararlar:
-  - Scrum çerçevesi boyunca ilerleyen sprintlerde zaman kısıtı nedeni ile oyunu küçültmek şeklinde ürünün revize edilmesi kararlaştırılmıştır.
+  - Scrum çerçevesi boyunca ilerleyen sprintlerde zaman kısıtı nedeni ile oyunu küçültmek şeklinde oyunun revize edilmesi kararlaştırılmıştır.
   - Oyunu tahmin mekaniklerinden arındırıp temayı, kurgu doğrultusunda bir online parti eğlence oyununa dönüştürmek uygun görülmüştür.
   - Oyun içi lobby sistemi iptal edilmesi uygun görülmüştür.
   - Oyunun github sayfasındaki readme kısmında yer alan oyun açıklaması başlığı alınan kararlar gereği revize edilmiştir.
@@ -222,13 +222,15 @@ Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sa
 
 <br>
 
-//Ekran Görüntüsü
+![Ekran görüntüsü 2024-08-02 211854](https://github.com/user-attachments/assets/49a33de0-a26b-4426-abd1-d9f0ae7f9275)
 
 <br>
 
 ## Sprint board update: Sprint board ekran görüntüsü:
 
-//Ekran Görüntüsü
+![Ekran görüntüsü 2024-08-02 204302](https://github.com/user-attachments/assets/9ab015ca-a2d7-4b27-85b6-54bf33b65e7c)
+
+![Ekran görüntüsü 2024-08-02 204342](https://github.com/user-attachments/assets/fbc0d92c-4efe-40e5-9635-3d8e6f388c8c)
 
 <br>
 
@@ -240,14 +242,14 @@ Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sa
 
 ## Sprint Review: Alınan kararlar:
 - Fazla iş yükünden ve zaman darlığından kaynaklı level sayısını düşürmeyi uygun bulduk.
-
-
+- Oyunun eğlenceli atmosferini zedelememek için skybox, lighting ve fog systemde açık bir tema kullanmayı kararlaştırdık.
+- Oyun içi objelerin hareket ve etkileşim ayarlarının projenin son test aşamasında iken revize edilmesi durumu oluşmuştur.
 
 
 <br>
 
 ## Sprint Retrospective:
-- İş planı yaparken hataları göz önünde bulunduramadığımızı farkettik ve bu sebeple işleri istediğimiz hızda ilerletemedik.
+- İş planı yaparken olası hataları göz önünde bulunduramadığımızı farkettik ve bu sebeple işleri istediğimiz hızda ilerletemedik.
 
 
 
