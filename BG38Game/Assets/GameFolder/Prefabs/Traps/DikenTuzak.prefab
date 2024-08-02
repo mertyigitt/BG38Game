@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6929413267443944417}
   - component: {fileID: 1087550278656035487}
   - component: {fileID: 4477101397713586312}
-  - component: {fileID: 3287478183474110514}
+  - component: {fileID: 6734461845272258269}
+  - component: {fileID: 6996241232531159572}
   m_Layer: 0
   m_Name: spikes
   m_TagString: Untagged
@@ -218,7 +219,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3287478183474110514
+--- !u!114 &6734461845272258269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,9 +228,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 2541302657989374140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8b863d8a7a62f64f9fe6c6ff1551497, type: 3}
+  m_Script: {fileID: 11500000, guid: b122bac592eb3ec47be4ec5b558606f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalPlayer: 0
+  finishedPlayers: 0
+--- !u!114 &6996241232531159572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541302657989374140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &7675148912657630714
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +277,7 @@ GameObject:
   - component: {fileID: 1817160213375277369}
   - component: {fileID: 1155097408408144957}
   - component: {fileID: 2385547977825608629}
+  - component: {fileID: 6463404424027750116}
   m_Layer: 0
   m_Name: DikenTuzak
   m_TagString: Untagged
@@ -354,3 +389,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 0.20000473, z: 4}
   m_Center: {x: 0, y: 0.000002026558, z: 0}
+--- !u!114 &6463404424027750116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675148912657630714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0

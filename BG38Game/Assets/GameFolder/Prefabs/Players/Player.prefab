@@ -1358,7 +1358,7 @@ MonoBehaviour:
   turnTransform: {fileID: 5901787312664796433}
   waitForKick: 0.86
   animationAcceleration: 4
-  countdownTime: 6
+  countdownTime: 3
   cam: {fileID: 8307125606094571995}
   camController: {fileID: 7161939184170856961}
 --- !u!114 &4588296366986187185
@@ -1557,6 +1557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8702cd3cb967e634a8d0565f6b7b8833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkPointPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &4148083709801336440
 MonoBehaviour:
   m_ObjectHideFlags: 0

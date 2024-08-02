@@ -19,7 +19,7 @@ namespace BG38Game
 
         private IEnumerator StartRounds()
         {
-            yield return new WaitForSeconds(waitBetweenRounds);
+            yield return new WaitForSeconds(6f);
 
             while (true)
             {
