@@ -44,8 +44,10 @@ namespace BG38Game
 
                 if (tilesToActivate < maxTile)
                 {
-                    tilesToActivate = tilesToActivate + tileIncrease;
+                    tilesToActivate = Mathf.Min(tilesToActivate + tileIncrease, maxTile);
                 }
+
+                Debug.Log($"Next round will have {tilesToActivate} tiles to activate.");
             }
         }
 

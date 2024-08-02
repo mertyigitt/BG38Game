@@ -4787,7 +4787,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerFinishedPlayers: 0
   levelPrefabs:
-  - {fileID: 2770396088206895876, guid: d5dfaeb1f252dd04ba6f9262f0e8085e, type: 3}
   - {fileID: 2461655031615888801, guid: 08fb832cf4b27804086b9b0757fb60a4, type: 3}
   - {fileID: 6793860743802346504, guid: 056695a554d81014daa8c97b02ee9f84, type: 3}
   - {fileID: 5828269533283930266, guid: 3e84fb62c6fa0164c8976acc85a80997, type: 3}
@@ -4809,7 +4808,6 @@ MonoBehaviour:
   players: []
   waitAfterFinish: 3
   levelTimes:
-  - 150
   - 150
   - 150
   - 180

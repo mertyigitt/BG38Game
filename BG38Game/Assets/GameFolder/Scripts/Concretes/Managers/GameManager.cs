@@ -15,6 +15,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Color = UnityEngine.Color;
 
 namespace BG38Game
 {
@@ -344,6 +345,7 @@ namespace BG38Game
                     obj.GetComponent<NetworkObject>().Spawn();
                     UpdateClientScore(playerObject.name, pointController.currentPoints.Value, obj.GetComponent<NetworkObject>().NetworkObjectId);
                     obj.GetComponent<RectTransform>().SetParent(currentPointPanel.transform);
+                    
                     panelIUs.Add(obj);
                 }
             }
@@ -363,7 +365,6 @@ namespace BG38Game
                 button.transform.SetParent(currentPointCanvas.transform);
                 button.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -400);
                 button.GetComponent<Button>().onClick.AddListener(ExitGame);
-                
             }
         }
         public void ShowPointScreen()

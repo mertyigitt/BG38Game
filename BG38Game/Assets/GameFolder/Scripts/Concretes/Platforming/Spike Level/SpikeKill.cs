@@ -38,8 +38,7 @@ namespace BG38Game
                 {
                     GameManager.Instance.managerFinishedPlayers++;
                     int playerRank = GameManager.Instance.managerFinishedPlayers - 1;
-
-                    // Ensure that the method is called only once per player
+                    
                     if (!IsServer) return;
 
                     pointController.AddPointsServerRpc(pointsForPositions[playerRank]);

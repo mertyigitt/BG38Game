@@ -23,13 +23,13 @@ namespace BG38Game
             originalColor = tileRenderer.material.color;
             isActivated.OnValueChanged += HandleActivationChanged;
         }
-        
+
         [ServerRpc]
         public void ActivateTileServerRpc()
         {
             isActivated.Value = true;
         }
-        
+
         private void HandleActivationChanged(bool oldValue, bool newValue)
         {
             if (newValue)
@@ -38,10 +38,8 @@ namespace BG38Game
             }
         }
 
-
         private IEnumerator ActivateTileCoroutine()
         {
-            
             for (int i = 0; i < flashCount; i++)
             {
                 tileRenderer.material.color = flashColor;
@@ -50,7 +48,6 @@ namespace BG38Game
                 yield return new WaitForSeconds(flashDuration);
             }
 
-            
             if (spikes != null)
             {
                 Spikes spikesScript = spikes.GetComponent<Spikes>();
