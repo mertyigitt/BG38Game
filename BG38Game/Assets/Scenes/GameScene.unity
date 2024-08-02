@@ -4787,8 +4787,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerFinishedPlayers: 0
   levelPrefabs:
-  - {fileID: 2770396088206895876, guid: d5dfaeb1f252dd04ba6f9262f0e8085e, type: 3}
   - {fileID: 5828269533283930266, guid: 3e84fb62c6fa0164c8976acc85a80997, type: 3}
+  - {fileID: 2770396088206895876, guid: d5dfaeb1f252dd04ba6f9262f0e8085e, type: 3}
   - {fileID: 2461655031615888801, guid: 08fb832cf4b27804086b9b0757fb60a4, type: 3}
   startButton: {fileID: 955420105}
   spawnPoints:
@@ -4802,6 +4802,7 @@ MonoBehaviour:
   pointCanvas: {fileID: 1694026707431592618, guid: a3f0a31c71e6c5d47a98e53fb0a8f959,
     type: 3}
   currentPointCanvas: {fileID: 0}
+  currentPointPanel: {fileID: 0}
   panelIUs: []
   pointControllers: []
   players: []
