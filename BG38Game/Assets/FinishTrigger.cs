@@ -52,7 +52,6 @@ namespace BG38Game
             if (finishedPlayers == totalPlayer)
             {
                 GameManager.Instance.StartGame();
-                GameManager.Instance.CreatePointUI();
                 ResetFinishedPlayers();
             }
         }
