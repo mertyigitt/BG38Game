@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace BG38Game
 {
-    public class SpikeManager : MonoBehaviour
+    public class SpikeManager : NetworkBehaviour
     {
         public List<FloorTile> floorTiles; 
         [SerializeField] private float waitBetweenRounds = 2f; 
@@ -14,7 +15,10 @@ namespace BG38Game
 
         void Start()
         {
-            StartCoroutine(StartRounds());
+            if (IsServer)
+            {
+                StartCoroutine(StartRounds());
+            }
         }
 
         private IEnumerator StartRounds()
@@ -27,7 +31,7 @@ namespace BG38Game
 
                 foreach (FloorTile tile in selectedTiles)
                 {
-                    StartCoroutine(tile.ActivateTile());
+                    tile.ActivateTileServerRpc();
                 }
 
                 float totalRoundTime = waitBetweenRounds;
@@ -37,8 +41,8 @@ namespace BG38Game
                 }
 
                 yield return new WaitForSeconds(totalRoundTime);
-                
-                if(tilesToActivate < maxTile)
+
+                if (tilesToActivate < maxTile)
                 {
                     tilesToActivate = tilesToActivate + tileIncrease;
                 }

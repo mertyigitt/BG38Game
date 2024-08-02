@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace BG38Game
 {
-    public class FloorTile : MonoBehaviour
+    public class FloorTile : NetworkBehaviour
     {
         public GameObject spikes; 
         [SerializeField] private Color flashColor = Color.red; 
@@ -14,16 +15,33 @@ namespace BG38Game
 
         private Color originalColor;
         private Renderer tileRenderer;
+        private NetworkVariable<bool> isActivated = new NetworkVariable<bool>(false);
 
         void Start()
         {
             tileRenderer = GetComponent<Renderer>();
             originalColor = tileRenderer.material.color;
+            isActivated.OnValueChanged += HandleActivationChanged;
+        }
+        
+        [ServerRpc]
+        public void ActivateTileServerRpc()
+        {
+            isActivated.Value = true;
+        }
+        
+        private void HandleActivationChanged(bool oldValue, bool newValue)
+        {
+            if (newValue)
+            {
+                StartCoroutine(ActivateTileCoroutine());
+            }
         }
 
-        public IEnumerator ActivateTile()
+
+        private IEnumerator ActivateTileCoroutine()
         {
-            // Flash the tile
+            
             for (int i = 0; i < flashCount; i++)
             {
                 tileRenderer.material.color = flashColor;
@@ -32,7 +50,7 @@ namespace BG38Game
                 yield return new WaitForSeconds(flashDuration);
             }
 
-            // Activate the spikes
+            
             if (spikes != null)
             {
                 Spikes spikesScript = spikes.GetComponent<Spikes>();

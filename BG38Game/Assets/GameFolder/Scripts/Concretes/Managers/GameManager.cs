@@ -72,11 +72,12 @@ namespace BG38Game
             StartCoroutine(LevelTransition());
         }
 
-        private IEnumerator LevelTransition()
+        
+        public IEnumerator LevelTransition()
         {
             if (isTiming)
             {
-                StopCoroutine("LevelStartTimerCoroutine");
+                StopCoroutine("LevelTimerCoroutine");
                 isTiming = false;
             }
             
@@ -85,9 +86,10 @@ namespace BG38Game
                 Destroy(existingCanvas);
                 existingCanvas = null;
             }
-            
+
             yield return new WaitForSeconds(waitAfterFinish);
-            
+
+            // Eski levelin karakterlerini devre dışı bırak
             foreach (var client in NetworkManager.Singleton.ConnectedClients)
             {
                 var playerObject = client.Value.PlayerObject;
@@ -98,8 +100,10 @@ namespace BG38Game
                 }
             }
 
+            // Yeni leveli başlat
             StartNewLevel();
-            
+
+            // Yeni levelin karakterlerini etkinleştir
             foreach (var client in NetworkManager.Singleton.ConnectedClients)
             {
                 var playerObject = client.Value.PlayerObject;
@@ -110,6 +114,10 @@ namespace BG38Game
                     playerController.EnableCharacter();
                 }
             }
+
+            yield return StartCoroutine(StartCountdown(3));
+            
+            StartTimer(levelTimes[levelCount - 1]);
         }
 
         void StartNewLevel()
@@ -129,7 +137,7 @@ namespace BG38Game
                 if (lastLevel != null)
                 {
                     lastLevel.GetComponent<NetworkObject>().Despawn();
-                    //Destroy(lastLevel);
+                    //Destroy(lastLevel);  // Destroy çağrısını burada ekleyin
                 }
                 var obj = Instantiate(levelPrefabs[levelCount], Vector3.zero, Quaternion.identity);
                 lastLevel = obj;
@@ -199,6 +207,22 @@ namespace BG38Game
 
             levelTimeText.enabled = true;
         }
+        
+        private IEnumerator StartCountdown(int countdownTime)
+        {
+            float countdown = countdownTime;
+
+            // Geri sayım süresini UI'da göster
+            while (countdown > 0)
+            {
+                UpdateClientTimerClientRpc(countdown);
+                yield return new WaitForSeconds(1f);
+                countdown--;
+            }
+
+            // Geri sayım bittiğinde UI'ı sıfırla
+            UpdateClientTimerClientRpc(0);
+        }
 
         public void StartTimer(float duration)
         {
@@ -212,6 +236,7 @@ namespace BG38Game
             isTiming = true;
             StartCoroutine(LevelTimerCoroutine());
         }
+        
         private IEnumerator LevelTimerCoroutine()
         {
             while (time > 0)
@@ -223,9 +248,7 @@ namespace BG38Game
                 yield return null;
             }
 
-
-            FinishTrigger finishTrigger = finishObject.GetComponent<FinishTrigger>();
-            finishTrigger.ResetFinishedPlayers();
+            // Süre dolduğunda seviye geçişini başlatın
             StartCoroutine(LevelTransition());
             CreatePointUI();
             isTiming = false;
