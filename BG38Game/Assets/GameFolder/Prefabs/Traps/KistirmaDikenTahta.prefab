@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 4198590268880506386}
   - component: {fileID: 4473504259528775239}
   - component: {fileID: 4263001348052162570}
+  - component: {fileID: 431576927597042233}
   m_Layer: 0
   m_Name: KistirmaDikenTahta
   m_TagString: Untagged
@@ -235,6 +236,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.73442984, y: 0.73856294, z: 1.6356404}
   m_Center: {x: -0.03636098, y: -0.02553624, z: -1.1730286}
+--- !u!114 &431576927597042233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563146716624629039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1001 &8476915765593197640
 PrefabInstance:
   m_ObjectHideFlags: 0

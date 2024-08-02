@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7655290273048045889}
   - component: {fileID: 6253949948046743791}
+  - component: {fileID: 4831987199732746367}
   m_Layer: 0
   m_Name: BalyozDD
   m_TagString: Untagged
@@ -48,6 +49,37 @@ MonoBehaviour:
   rotateDirection: {x: 0, y: 0, z: 1}
   swingAngle: 60
   swingSpeed: 1
+--- !u!114 &4831987199732746367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244439915529746095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &5347697552283413681
 GameObject:
   m_ObjectHideFlags: 0
