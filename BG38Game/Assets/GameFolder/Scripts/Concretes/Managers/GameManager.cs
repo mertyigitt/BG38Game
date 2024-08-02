@@ -90,8 +90,7 @@ namespace BG38Game
                 StopCoroutine("LevelTimerCoroutine");
                 isTiming = false;
             }
-
-            //ShowPointScreen();
+            
             
             CreatePointUI();
 
@@ -266,7 +265,7 @@ namespace BG38Game
 
             // Süre dolduğunda seviye geçişini başlatın
             StartCoroutine(LevelTransition());
-            CreatePointUI();
+            //CreatePointUI();
             isTiming = false;
             time = 0;
         }
