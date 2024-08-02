@@ -5046,8 +5046,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelPrefabs:
-  - {fileID: 8458262308550330461, guid: 7bed4b43da25cc04491a759e2b5db093, type: 3}
   - {fileID: 5828269533283930266, guid: 3e84fb62c6fa0164c8976acc85a80997, type: 3}
+  - {fileID: 8458262308550330461, guid: 7bed4b43da25cc04491a759e2b5db093, type: 3}
   - {fileID: 2770396088206895876, guid: d5dfaeb1f252dd04ba6f9262f0e8085e, type: 3}
   startButton: {fileID: 955420105}
   spawnPoints:
@@ -5062,7 +5062,7 @@ MonoBehaviour:
   players: []
   waitAfterFinish: 3
   levelTimes:
-  - 30
+  - 3000
   - 300
   - 30
   levelTimeText: {fileID: 0}
@@ -6486,8 +6486,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2, y: 0.13320652, z: 0.4}
-  m_Center: {x: 0, y: 0.42320094, z: 0}
+  m_Size: {x: 0.2, y: 0.11234187, z: 0.4}
+  m_Center: {x: 0, y: 0.41276857, z: 0}
 --- !u!1001 &1214679650799170504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6936,7 +6936,7 @@ Transform:
   m_GameObject: {fileID: 4833317944271234946}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.05, y: -40.3, z: -132.65}
+  m_LocalPosition: {x: -2.05, y: -40, z: -132.65}
   m_LocalScale: {x: 550.4436, y: 71.8, z: 775.71967}
   m_ConstrainProportionsScale: 0
   m_Children: []
