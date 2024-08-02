@@ -56,6 +56,16 @@ Unity Grup 38
 
 <br>
 
+<br>
+
+## JURİYE ÖZEL NOT
+- Reklam Entegrasyonu: Oyunumuz ücretli bir bilgisayar oyunu olduğu için oyun içi reklam bulunmamaktadır. 
+- Yapay zekanın kullanım alanı: Labirent levellerinde bulunan hayaletlerde kullanılmıştır.
+
+
+<br>
+
+
 </details>
 
 </details>
@@ -229,6 +239,7 @@ Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sa
 <br>
 
 ## Sprint Review: Alınan kararlar:
+- Fazla iş yükünden ve zaman darlığından kaynaklı level sayısını düşürmeyi uygun bulduk.
 
 
 
@@ -236,7 +247,7 @@ Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sa
 <br>
 
 ## Sprint Retrospective:
-
+- İş planı yaparken hataları göz önünde bulunduramadığımızı farkettik ve bu sebeple işleri istediğimiz hızda ilerletemedik.
 
 
 
