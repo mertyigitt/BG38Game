@@ -42,6 +42,7 @@ namespace BG38Game
         [SerializeField] private TextMeshProUGUI levelTimeText;
         [SerializeField] private bool isStartLevel;
         [SerializeField] private GameObject finishObject;
+        [SerializeField] GameObject exitButton;
 
         [SerializeField] private float time;
         [SerializeField] private GameObject timeCanvas;
@@ -147,12 +148,13 @@ namespace BG38Game
             {
                 if (levelCount > levelPrefabs.Length - 1)
                 {
-                    levelCount = 0;
+                    CreatePointUI();
+                    CreateExitButton();
+                    return;
                 }
                 if (lastLevel != null)
                 {
                     lastLevel.GetComponent<NetworkObject>().Despawn();
-                    //Destroy(lastLevel);  // Destroy çağrısını burada ekleyin
                 }
                 var obj = Instantiate(levelPrefabs[levelCount], Vector3.zero, Quaternion.identity);
                 lastLevel = obj;
@@ -166,8 +168,7 @@ namespace BG38Game
                 levelCount++;
                 UpdateLevelCountClientRpc(levelCount);
                 CreateTimeCanvas();
-
-                // Zamanlayıcıyı başlat
+                
             }
         }
     
@@ -262,10 +263,8 @@ namespace BG38Game
                 UpdateClientTimerClientRpc(time);
                 yield return null;
             }
-
-            // Süre dolduğunda seviye geçişini başlatın
+            
             StartCoroutine(LevelTransition());
-            //CreatePointUI();
             isTiming = false;
             time = 0;
         }
@@ -294,6 +293,15 @@ namespace BG38Game
 
         public void ExitGame()
         {
+            if (IsServer)
+            {
+                NetworkManager.Singleton.Shutdown();
+            }
+            else
+            {
+                NetworkManager.Singleton.Shutdown();
+            }
+
             Application.Quit();
         }
 
@@ -338,6 +346,24 @@ namespace BG38Game
                     obj.GetComponent<RectTransform>().SetParent(currentPointPanel.transform);
                     panelIUs.Add(obj);
                 }
+            }
+        }
+
+        void CreateExitButton()
+        {
+            CreateExitButtonClientRpc();
+        }
+        [ClientRpc]
+        void CreateExitButtonClientRpc()
+        {
+            if (IsServer)
+            {
+                var button = Instantiate(exitButton, Vector3.zero, Quaternion.identity);
+                button.GetComponent<NetworkObject>().Spawn();
+                button.transform.SetParent(currentPointCanvas.transform);
+                button.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -400);
+                button.GetComponent<Button>().onClick.AddListener(ExitGame);
+                
             }
         }
         public void ShowPointScreen()
