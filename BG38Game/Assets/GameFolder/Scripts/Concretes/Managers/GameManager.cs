@@ -30,6 +30,9 @@ namespace BG38Game
         public int levelCount;
         [SerializeField] private GameObject pointUI;
         [SerializeField] private GameObject pointPanel;
+        [SerializeField] private GameObject pointCanvas;
+        [SerializeField] private GameObject currentPointCanvas;
+        [SerializeField] private GameObject currentPointPanel;
         [SerializeField] private List<GameObject> panelIUs;
         public List<PointController> pointControllers;
         public List<GameObject> players;
@@ -88,7 +91,9 @@ namespace BG38Game
                 isTiming = false;
             }
 
-            ShowPointScreen();
+            //ShowPointScreen();
+            
+            CreatePointUI();
 
             if (existingCanvas != null)
             {
@@ -312,7 +317,16 @@ namespace BG38Game
                     panelIUs.Clear();
                 }
 
-                pointPanel.GetComponent<Image>().enabled = true;
+                currentPointCanvas = Instantiate(pointCanvas, Vector3.zero, Quaternion.identity);
+                currentPointCanvas.GetComponent<NetworkObject>().Spawn();
+                
+                currentPointPanel= Instantiate(pointPanel, pointPanel.transform.position, Quaternion.identity);
+                currentPointPanel.GetComponent<NetworkObject>().Spawn();
+                
+                currentPointPanel.transform.SetParent(currentPointCanvas.transform);
+                
+                currentPointPanel.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
 
                 foreach (var client in NetworkManager.Singleton.ConnectedClients)
                 {
@@ -322,7 +336,7 @@ namespace BG38Game
                     var obj = Instantiate(pointUI, Vector3.zero, Quaternion.identity);
                     obj.GetComponent<NetworkObject>().Spawn();
                     UpdateClientScore(playerObject.name, pointController.currentPoints.Value, obj.GetComponent<NetworkObject>().NetworkObjectId);
-                    obj.GetComponent<RectTransform>().SetParent(pointPanel.transform);
+                    obj.GetComponent<RectTransform>().SetParent(currentPointPanel.transform);
                     panelIUs.Add(obj);
                 }
             }
@@ -330,7 +344,6 @@ namespace BG38Game
         public void ShowPointScreen()
         {
             CreatePointUIClientRpc();
-            pointPanel.GetComponent<Image>().enabled = true;
         }
 
         public void HidePointScreen()
@@ -339,12 +352,14 @@ namespace BG38Game
             {
                 foreach (var panelui in panelIUs)
                 {
-                    Destroy(panelui);
+                    panelui.GetComponent<NetworkObject>().Despawn();
                 }
                 panelIUs.Clear();
             }
 
-            pointPanel.GetComponent<Image>().enabled = false;
+            currentPointPanel.GetComponent<NetworkObject>().Despawn();
+            currentPointCanvas.GetComponent<NetworkObject>().Despawn();
+            
         }
 
         [ClientRpc]
