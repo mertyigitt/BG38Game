@@ -16,6 +16,10 @@ namespace BG38Game
                     teleportable.TeleportClientRpc(teleportable.checkPointPosition);
                 }
             }
+            else if (other.CompareTag("Ball"))
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 }

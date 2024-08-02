@@ -2783,15 +2783,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1932202354177204562, guid: 08fb832cf4b27804086b9b0757fb60a4,
-        type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 3431309758
-      objectReference: {fileID: 0}
     - target: {fileID: 2461655031615888801, guid: 08fb832cf4b27804086b9b0757fb60a4,
         type: 3}
       propertyPath: m_Name
       value: Can Parkour Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433377609958558735, guid: 08fb832cf4b27804086b9b0757fb60a4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472306812896852378, guid: 08fb832cf4b27804086b9b0757fb60a4,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135168018754366103, guid: 08fb832cf4b27804086b9b0757fb60a4,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 5627754762228443348, guid: 08fb832cf4b27804086b9b0757fb60a4,
         type: 3}
@@ -2847,6 +2857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536021612210696985, guid: 08fb832cf4b27804086b9b0757fb60a4,
+        type: 3}
+      propertyPath: swingAngle
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

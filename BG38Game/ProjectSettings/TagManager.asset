@@ -6,6 +6,7 @@ TagManager:
   tags:
   - finish
   - TimeCanvas
+  - Ball
   layers:
   - Default
   - TransparentFX
