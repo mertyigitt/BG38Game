@@ -11,7 +11,7 @@ namespace BG38Game
     public class SpikeKill : NetworkBehaviour
     {
         [SerializeField] private int totalPlayer;
-        [SerializeField] private int finishedPlayers = 0;
+        //[SerializeField] private int finishedPlayers = 0;
         private int[] pointsForPositions;
 
         private HashSet<GameObject> finishedPlayerSet = new HashSet<GameObject>();
@@ -19,7 +19,7 @@ namespace BG38Game
         private void Start()
         {
             totalPlayer = NetworkManager.Singleton.ConnectedClientsIds.Count;
-            finishedPlayers = 0;
+            GameManager.Instance.managerFinishedPlayers = 0;
             pointsForPositions = new int[totalPlayer];
 
             for (int i = 0; i < totalPlayer; i++)
@@ -34,10 +34,10 @@ namespace BG38Game
             {
                 PointController pointController = other.GetComponent<PointController>();
 
-                if (pointController != null && finishedPlayers < totalPlayer)
+                if (pointController != null && GameManager.Instance.managerFinishedPlayers < totalPlayer)
                 {
-                    finishedPlayers++;
-                    int playerRank = finishedPlayers - 1;
+                    GameManager.Instance.managerFinishedPlayers++;
+                    int playerRank = GameManager.Instance.managerFinishedPlayers - 1;
 
                     // Ensure that the method is called only once per player
                     if (!IsServer) return;
@@ -49,7 +49,7 @@ namespace BG38Game
                     finishedPlayerSet.Add(other.gameObject);
                 }
 
-                if (finishedPlayers == totalPlayer)
+                if (GameManager.Instance.managerFinishedPlayers == totalPlayer)
                 {
                     GameManager.Instance.StartGame();
                     GameManager.Instance.CreatePointUI();
@@ -69,7 +69,7 @@ namespace BG38Game
 
         public void ResetFinishedPlayers()
         {
-            finishedPlayers = 0;
+            GameManager.Instance.resetFinished();
             finishedPlayerSet.Clear();
         }
     }

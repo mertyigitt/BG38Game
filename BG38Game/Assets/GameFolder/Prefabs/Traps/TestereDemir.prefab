@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2181140743935643448}
   - component: {fileID: 1893013342206179211}
   - component: {fileID: 5765942602025805960}
-  - component: {fileID: 9066675371934603112}
+  - component: {fileID: 2552628642080821684}
   m_Layer: 0
   m_Name: TestereDemirSap
   m_TagString: Untagged
@@ -165,8 +165,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &9066675371934603112
-MeshCollider:
+--- !u!65 &2552628642080821684
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -183,10 +183,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4163119819410109087, guid: d54148ad17015fd4c817f49978daaecd, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 1.1561247, y: 7.235777, z: 1.9892921}
+  m_Center: {x: 0.000000059604645, y: 3.038649, z: 0.009847641}
 --- !u!1 &7444342718745292116
 GameObject:
   m_ObjectHideFlags: 0

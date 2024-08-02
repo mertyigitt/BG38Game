@@ -103,8 +103,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 9.413504, y: 1.5667754, z: 1.5778996}
-  m_Center: {x: 0.7013509, y: -0.023827434, z: -0.035481583}
+  m_Size: {x: 8.527929, y: 1.1062765, z: 1.5778996}
+  m_Center: {x: 0.258564, y: 0.01513797, z: -0.035481572}
 --- !u!1 &2169905273846197678
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 7585500971393779009}
   - component: {fileID: 2911933673689509208}
   - component: {fileID: 4909428841634216653}
+  - component: {fileID: 7694276429852720575}
   m_Layer: 0
   m_Name: KutukTekBuyukBasi
   m_TagString: Untagged
@@ -253,6 +254,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7694276429852720575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405571812811651664}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0669497, y: 1.8907522, z: 1.0472245}
+  m_Center: {x: 0.017229559, y: 0.9180425, z: -0.026971523}
 --- !u!1 &6689853668197109854
 GameObject:
   m_ObjectHideFlags: 0

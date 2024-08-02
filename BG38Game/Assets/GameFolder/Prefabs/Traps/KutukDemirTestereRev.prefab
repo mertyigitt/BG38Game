@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3053449372527956216}
   - component: {fileID: 8577461697369354558}
   - component: {fileID: 3351075078300660774}
-  - component: {fileID: 6119710275835260528}
   - component: {fileID: 4218872463503136719}
+  - component: {fileID: 8002673867128218880}
   m_Layer: 0
   m_Name: KutukDemirTestere
   m_TagString: Untagged
@@ -113,28 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b863d8a7a62f64f9fe6c6ff1551497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &6119710275835260528
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5306481367593673784}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 340596368593396029, guid: d4a307497893af84cb27d48f65cf407e, type: 3}
 --- !u!114 &4218872463503136719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +144,27 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!65 &8002673867128218880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306481367593673784}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.1109467, y: 1.6227424, z: 1.6227442}
+  m_Center: {x: 0.00000011920929, y: -0.0000005662441, z: 0}
 --- !u!1 &5615178426162235077
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +259,7 @@ GameObject:
   - component: {fileID: 4058615157529994735}
   - component: {fileID: 8737975091546597828}
   - component: {fileID: 7740813115802475547}
-  - component: {fileID: 5548941561080437278}
+  - component: {fileID: 7361667840027165304}
   m_Layer: 0
   m_Name: KutukDemirTestereBasi
   m_TagString: Untagged
@@ -333,8 +332,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5548941561080437278
-MeshCollider:
+--- !u!65 &7361667840027165304
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -351,10 +350,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5253511389099050674, guid: d4a307497893af84cb27d48f65cf407e, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 1.1678867, y: 2.0661435, z: 1.1678872}
+  m_Center: {x: 0.00074258447, y: 1.0330496, z: 0.00009459257}
 --- !u!1 &6890301431803162787
 GameObject:
   m_ObjectHideFlags: 0

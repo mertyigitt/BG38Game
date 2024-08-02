@@ -21,6 +21,8 @@ namespace BG38Game
     public class GameManager : NetworkBehaviour
     {
         public static GameManager Instance;
+        public int managerFinishedPlayers = 0;
+
         [SerializeField] private GameObject[] levelPrefabs;
         [SerializeField] private Button startButton;
         [SerializeField] private Transform[] spawnPoints;
@@ -67,6 +69,11 @@ namespace BG38Game
             }
         }
 
+        public void resetFinished()
+        {
+            managerFinishedPlayers = 0;
+        }
+
         public void StartGame()
         {
             StartCoroutine(LevelTransition());
@@ -80,7 +87,9 @@ namespace BG38Game
                 StopCoroutine("LevelTimerCoroutine");
                 isTiming = false;
             }
-            
+
+            ShowPointScreen();
+
             if (existingCanvas != null)
             {
                 Destroy(existingCanvas);
@@ -88,6 +97,8 @@ namespace BG38Game
             }
 
             yield return new WaitForSeconds(waitAfterFinish);
+
+            HidePointScreen();
 
             // Eski levelin karakterlerini devre dışı bırak
             foreach (var client in NetworkManager.Singleton.ConnectedClients)
@@ -315,6 +326,25 @@ namespace BG38Game
                     panelIUs.Add(obj);
                 }
             }
+        }
+        public void ShowPointScreen()
+        {
+            CreatePointUIClientRpc();
+            pointPanel.GetComponent<Image>().enabled = true;
+        }
+
+        public void HidePointScreen()
+        {
+            if (panelIUs != null)
+            {
+                foreach (var panelui in panelIUs)
+                {
+                    Destroy(panelui);
+                }
+                panelIUs.Clear();
+            }
+
+            pointPanel.GetComponent<Image>().enabled = false;
         }
 
         [ClientRpc]
