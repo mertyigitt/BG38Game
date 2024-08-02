@@ -63,6 +63,8 @@ Unity Grup 38
 - Yapay zekanın kullanım alanı: Labirent levellerinde bulunan hayaletlerde kullanılmıştır.
 
 
+  ![Bootcamp38 2](https://github.com/user-attachments/assets/27aedbdb-bf69-4eb7-b9aa-58e9400646f8)
+
 <br>
 
 
@@ -236,7 +238,8 @@ Oyun içeriğinin fantazi orta çağ temalı ve stilize bir görsel tasarıma sa
 
 ## Ürün Durumu: Ekran görüntüleri:
 
-//Ekran Görüntüsü
+![image](https://github.com/user-attachments/assets/e0088781-9014-4a47-889f-3be64237a319)
+
 
 <br>
 
