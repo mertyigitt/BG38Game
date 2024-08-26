@@ -19,7 +19,7 @@ namespace BG38Game
             startRotation = transform.rotation;
         }
 
-        void Update()
+        void FixedUpdate()
         {
             currentTime += Time.deltaTime * swingSpeed;
             float angle = Mathf.Sin(currentTime) * swingAngle;

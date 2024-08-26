@@ -9,7 +9,7 @@ namespace BG38Game
         [SerializeField] private Vector3 rotateDirection = Vector3.right;
         [SerializeField] private float rotationSpeed = 3f;
 
-        void Update()
+        void FixedUpdate()
         {
             transform.Rotate(rotateDirection*rotationSpeed);
         }

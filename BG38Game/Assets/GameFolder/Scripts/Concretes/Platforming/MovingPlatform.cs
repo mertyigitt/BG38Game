@@ -20,7 +20,7 @@ namespace BG38Game
             startPosition = transform.position;
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (!isWaiting)
             {

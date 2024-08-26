@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.64, y: 10.253, z: 6.115}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7500002, y: 0.7500001, z: 0.7500001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 418901494425094667}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateDirection: {x: 0, y: 0, z: 1}
-  swingAngle: 75
+  swingAngle: 45
   swingSpeed: 1.5
 --- !u!114 &973558114104372330
 MonoBehaviour:
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateDirection: {x: 0, y: 0, z: 1}
-  rotationSpeed: 3
+  rotationSpeed: 5
 --- !u!114 &5113972897853382894
 MonoBehaviour:
   m_ObjectHideFlags: 0
